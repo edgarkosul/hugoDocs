@@ -56,17 +56,17 @@ weight = 3
 
 Значения параметров не которые на определены в разделе `languages` сбрасываются до глобального значения этого параметра (в приведенном примере все языки будут использовать значение  `copyright` : Everything is mine). Это также работает и для `params`, в приведенном примере, для парметра `help` для французкого языка будет использоваться значение `Aide` и значение  `Help`  для всех остальных языков у которых этот параметр не указан.
 
-С указанной в примере конфигурацией весь контент, карта сайта, лента RSS, пагинации и страницы таксономий будут отображаться ниже `/` для английского языка (язык по умолчанию) и ниже `/fr` для французкого языка.
+С указанной в примере конфигурацией весь контент, карта сайта, лента RSS, пагинации и страницы таксономий будут отображаться ниже `/` для английского языка (язык по умолчанию) и ниже директории `/fr` для французкого языка.
 
 When working with front matter `Params` in [single page templates], omit the `params` in the key for the translation.
 
 `defaultContentLanguage` устанавливает язык по умолчанию для сайта. Если параметр не указан языком по умолчанию будет `en`.
 
-If the default language needs to be rendered below its own language code (`/en`) like the others, set `defaultContentLanguageInSubdir: true`.
+Если необходимо чтобы весь контент сайта для языка по умолчанию отображался ниже директории (`/en`) для английского языка по умолчанию, так же как и у других языков сайта, используйте параметр `defaultContentLanguageInSubdir: true`.
 
-Only the obvious non-global options can be overridden per language. Examples of global options are `baseURL`, `buildDrafts`, etc.
+Для каждого языка можно переопределить только очевидные не глобальные параметры. Примеры глобальных параметров, например `baseURL`, `buildDrafts`.
 
-**Please note:** use lowercase language codes, even when using regional languages (ie. use pt-pt instead of pt-PT). Currently Hugo language internals lowercase language codes, which can cause conflicts with settings like `defaultContentLanguage` which are not lowercased. Please track the evolution of this issue in [Hugo repository issue tracker](https://github.com/gohugoio/hugo/issues/7344)
+**Обратите внимание:** Используйте коды языков в нижнем регистре, даже при использовании региональных языков (например используйте ru-ru вместо ru-RU). При использовании в параметре `defaultContentLanguage` кода не в нижнем регистре могут возникать конфликты. Пожалуйста, отслеживайте решение этой проблемы тут [Hugo repository issue tracker](https://github.com/gohugoio/hugo/issues/7344)
 
 ### Disable a Language
 

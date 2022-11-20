@@ -58,7 +58,7 @@ weight = 3
 
 С указанной в примере конфигурацией весь контент, карта сайта, лента RSS, пагинации и страницы таксономий будут отображаться ниже `/` для английского языка (язык по умолчанию) и ниже директории `/fr` для французкого языка.
 
-When working with front matter `Params` in [single page templates], omit the `params` in the key for the translation.
+При использовании `Params` в заголовках Front Matter [шаблона одиночной страницы], не указывайте ключ `params` в основной конфигурации сайта в разделе конфигурации для перевода.
 
 `defaultContentLanguage` устанавливает язык по умолчанию для сайта. Если параметр не указан языком по умолчанию будет `en`.
 
@@ -68,29 +68,29 @@ When working with front matter `Params` in [single page templates], omit the `pa
 
 **Обратите внимание:** Используйте коды языков в нижнем регистре, даже при использовании региональных языков (например используйте ru-ru вместо ru-RU). При использовании в параметре `defaultContentLanguage` кода не в нижнем регистре могут возникать конфликты. Пожалуйста, отслеживайте решение этой проблемы тут [Hugo repository issue tracker](https://github.com/gohugoio/hugo/issues/7344)
 
-### Disable a Language
+### Отключить язык
 
-You can disable one or more languages. This can be useful when working on a new translation.
+Вы можете отключить один или несколько языков.Это может быть полезно при работе над новым переводом.
 
 {{< code-toggle file="config" >}}
 disableLanguages = ["fr", "ja"]
 {{< /code-toggle >}}
 
-Note that you cannot disable the default content language.
+Обратите внимание, что вы не можете отключить язык по умолчанию.
 
-We kept this as a standalone setting to make it easier to set via [OS environment]:
+Эту настройку также можно активировать через переменную окружения операционной системы - [OS environment]:
 
 ```bash
 HUGO_DISABLELANGUAGES="fr ja" hugo
 ```
 
-If you have already a list of disabled languages in `config.toml`, you can enable them in development like this:
+Если у вас уже есть список отключенных языков в `config.toml`, вы можете включить их в режиме разработки через переменную окружения, следующим образом:
 
 ```bash
 HUGO_DISABLELANGUAGES=" " hugo server
 ```
 
-### Configure Multilingual Multihost
+### Насройка отдельного хоста для каждого из переводов сайта
 
 From **Hugo 0.31** we support multiple languages in a multihost configuration. See [this issue](https://github.com/gohugoio/hugo/issues/4027) for details.
 
@@ -587,5 +587,5 @@ Currently, `hugo new` is not ready to support generating multilingual content. B
 [OS environment]: /getting-started/configuration/#configure-with-environment-variables
 [rellangurl]: /functions/rellangurl
 [RFC 5646]: https://tools.ietf.org/html/rfc5646
-[single page templates]: /templates/single-page-templates/
+[шаблона одиночной страницы]: /templates/single-page-templates/
 [time.Format]: /functions/dateformat

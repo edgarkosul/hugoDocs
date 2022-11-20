@@ -1,7 +1,8 @@
 {
   "recommendations": [
-    "DavidAnson.vscode-markdownlint",
-    "EditorConfig.EditorConfig",
-    "streetsidesoftware.code-spell-checker"
+    "davidanson.vscode-markdownlint",
+    "editorconfig.editorconfig",
+    "streetsidesoftware.code-spell-checker",
+    "funkyremi.vscode-google-translate"
   ]
 }

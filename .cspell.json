@@ -334,7 +334,7 @@
     "zzbbaabb",
     "مدونتي"
   ],
-  "language": "en,en-US,de,fr",
+  "language": "en,en-US,de,fr,ru-RU",
   "allowCompoundWords": true,
   "files": [
     "**/*.md"

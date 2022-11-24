@@ -70,89 +70,91 @@ foo = "bar"
 │       └── params.toml
 ```
 
-Considering the structure above, when running `hugo --environment staging`, Hugo will use every setting from `config/_default` and merge `staging`'s on top of those.
+Учитывая приведенную выше структуру, при запуске `hugo --environment staging`, Hugo будет использовать все настройки из `config/_default` и объединять `staging` поверх них.
 
-Let's take an example to understand this better. Let's say you are using Google Analytics for your website. This requires you to specify `googleAnalytics = "G-XXXXXXXX"` in `config.toml`. Now consider the following scenario:
-- You don't want the Analytics code to be loaded in development i.e. in your `localhost`
-- You want to use separate googleAnalytics IDs for your production & staging environments (say):
-  - `G-PPPPPPPP` for production
-  - `G-SSSSSSSS` for staging
+Давайте возьмем пример, чтобы понять это лучше. Допустим, вы используете Google Analytics для своего веб-сайта. Для этого необходимо указать `googleAnalytics = "G-XXXXXXXX"` в `config.toml`.Теперь рассмотрим следующий сценарий:
+- Вы не хотите, чтобы код Analytics загружался в процессе разработки, т.е. на вашем `localhost`
+– Вы хотите использовать отдельные идентификаторы Google Analytics для рабочей и тестовой сред (скажем):
+  - `G-PPPPPPPP` для рабочей среды (prodaction)
+  - `G-SSSSSSSS` для тестовой среды (staging)
 
-This is how you need to configure your `config.toml` files considering the above scenario:
-1. In `_default/config.toml` you don't need to mention `googleAnalytics` parameter at all. This ensures that no Google Analytics code is loaded in your development server i.e. when you run `hugo serve`. This works since, by default Hugo sets `Environment=development` when you run `hugo serve` which uses the config files from `_default` folder
-2. In `production/config.toml` you just need to have one line:
+Вот как вам нужно настроить файлы `config.toml`, учитывая описанный выше сценарий:
+1. В `_default/config.toml` вообще не нужно указывать параметр googleAnalytics. Это гарантирует, что код Google Analytics не будет загружен на ваш сервер разработки, например, когда вы запускаете `hugo server`. Это работает, поскольку по умолчанию Hugo устанавливает `Environment=development`, когда вы запускаете `hugo server`, который использует файлы конфигурации из папки `_default`.
+2.В `production/config.toml` вам просто нужно иметь одну строку:
 
     ```googleAnalytics = "G-PPPPPPPP"```
 
-    You don't need to mention all other parameters like `title`, `baseURL`, `theme` etc. again in this config file. You need to mention only those parameters which are different or new for the production environment. This is due to the fact that Hugo is going to __merge__ this on top of `_default/config.toml`. Now when you run `hugo` (build command), by default hugo sets `Environment=production`, so the `G-PPPPPPPP` analytics code will be there in your production website
-3. Similarly in `staging/config.toml` you just need to have one line:
+  Вам не нужно снова упоминать все другие параметры, такие как `title`, `baseURL`, `theme` и т. д. в этом файле конфигурации. Вам нужно указать только те параметры, которые отличаются или являются новыми для рабочей среды. Это связано с тем, что Hugo __объединит__ эту настройку поверх `_default/config.toml`. Теперь, когда вы запускаете `hugo` (команда сборки), по умолчанию Hugo устанавливает `Environment=production`, поэтому код аналитики `G-PPPPPPPP` будет присутствовать на вашем рабочем веб-сайте.
+3. Точно так же в `staging/config.toml` вам просто нужно иметь одну строку:
 
     ```googleAnalytics = "G-SSSSSSSS"```
 
-    Now you need to tell Hugo that you are using the staging environment. So your build command should be `hugo --environment staging` which will load the `G-SSSSSSSS` analytics code in your staging website
+  Теперь вам нужно сообщить Хьюго, что вы используете тестовую среду (staging). Таким образом, ваша команда сборки должна быть `hugo --environment staging`, которая загрузит код аналитики `G-SSSSSSSS` на вашем тестовом веб-сайте.
 
 {{% note %}}
-Default environments are __development__ with `hugo server` and __production__ with `hugo`.
+Средами по умолчанию являются __development__ c командой `hugo server` и __production__ с командой `hugo`.
 {{%/ note %}}
 
-## Merge Configuration from Themes
+## Объединение с конфигурацией  из директории темы
 
-The configuration value for `_merge` can be one of:
+Значение конфигурации `_merge` может быть одним из:
 
 none
-: No merge.
+: Нет слияния.
 
 shallow
-: Only add values for new keys.
+: Добавляются значения только новых параметров.
 
 deep
-: Add values for new keys, merge existing.
+: Добавляются значения новых параметров и объединяются существующие.
 
-Note that you don't need to be so verbose as in the default setup below; a `_merge` value higher up will be inherited if not set.
+Обратите внимание, что вам не нужно указывать все праметры из приведенных значений по умолчанию, значение `_merge` будет унаследовано, если не установлено.
+  After scanning selected spans, do NOT read-scan remainder of disk.
+If Selective self-test is pending on power-up, resume after 0 minute delay.
+Значения по умолчанию:
 
 {{< code-toggle config="mergeStrategy" skipHeader=true />}}
 
-## All Configuration Settings
+## Все параметры конфигурации
 
-The following is the full list of Hugo-defined variables with their default
-value in parentheses. Users may choose to override those values in their site
-config file(s).
+Ниже приведен полный список определенных Hugo переменных с их значениями по умолчанию.
+значение в скобках. Пользователи могут переопределить эти значения на своем сайте в файлах конфигурации.
 
 ### archetypeDir
 
-**Default value:** "archetypes"
+**Значение по умолчанию** "archetypes"
 
-The directory where Hugo finds archetype files (content templates). {{% module-mounts-note %}}
+Директория, в которой Hugo находит файлы c шаблонами заголовков Front Matter. {{% module-mounts-note-ru %}}
 
 ### assetDir
 
-**Default value:** "assets"
+**Значение по умолчанию** "assets"
 
-The directory where Hugo finds asset files used in [Hugo Pipes](/hugo-pipes/). {{% module-mounts-note %}}
+Каталог, в котором Hugo находит файлы активов (css, jpg, csv и пр.) , используемые в обработчиках [Hugo Pipes](/ru/hugo-pipes/). {{% module-mounts-note-ru %}}
 
 ### baseURL
 
-Hostname (and path) to the root, e.g. https://bep.is/
+Имя хоста (и путь) к корню, например: https://www.siteko.net/
 
 ### build
 
-See [Configure Build](#configure-build)
+См. [Конфигурация сборки](#configure-build)
 
 ### buildDrafts (false)
 
-**Default value:** false
+**Значение по умолчанию** false
 
-Include drafts when building.
+Если параметр установлен в значение `true` в сборку будут включен контент не имеющий в заголовках Front Matter параметра `draft: true`
 
 ### buildExpired
 
-**Default value:** false
+**Значение по умолчанию** false
 
 Include content already expired.
 
 ### buildFuture
 
-**Default value:** false
+**Значение по умолчанию** false
 
 Include content with publishdate in the future.
 
@@ -166,97 +168,97 @@ Pass down default configuration values (front matter) to pages in the content tr
 
 ### canonifyURLs
 
-**Default value:** false
+**Значение по умолчанию** false
 
 Enable to turn relative URLs into absolute.
 
 ### contentDir
 
-**Default value:** "content"
+**Значение по умолчанию** "content"
 
-The directory from where Hugo reads content files. {{% module-mounts-note %}}
+The directory from where Hugo reads content files. {{% module-mounts-note-ru %}}
 
 ### copyright
 
-**Default value:** ""
+**Значение по умолчанию** ""
 
 Copyright notice for your site, typically displayed in the footer.
 
 ### dataDir
 
-**Default value:** "data"
+**Значение по умолчанию** "data"
 
-The directory from where Hugo reads data files. {{% module-mounts-note %}}
+The directory from where Hugo reads data files. {{% module-mounts-note-ru %}}
 
 ### defaultContentLanguage
 
-**Default value:** "en"
+**Значение по умолчанию** "en"
 
 Content without language indicator will default to this language.
 
 ### defaultContentLanguageInSubdir
 
-**Default value:**  false
+**Значение по умолчанию**  false
 
 Render the default content language in subdir, e.g. `content/en/`. The site root `/` will then redirect to `/en/`.
 
 ### disableAliases
 
-**Default value:**  false
+**Значение по умолчанию**  false
 
 Will disable generation of alias redirects. Note that even if `disableAliases` is set, the aliases themselves are preserved on the page. The motivation with this is to be able to generate 301 redirects in an `.htaccess`, a Netlify `_redirects` file or similar using a custom output format.
 
 ### disableHugoGeneratorInject
 
-**Default value:**  false
+**Значение по умолчанию**  false
 
 Hugo will, by default, inject a generator meta tag in the HTML head on the _home page only_. You can turn it off, but we would really appreciate if you don't, as this is a good way to watch Hugo's popularity on the rise.
 
 ### disableKinds
 
-**Default value:**  []
+**Значение по умолчанию**  []
 
 Enable disabling of all pages of the specified *Kinds*. Allowed values in this list: `"page"`, `"home"`, `"section"`, `"taxonomy"`, `"term"`, `"RSS"`, `"sitemap"`, `"robotsTXT"`, `"404"`.
 
 ### disableLiveReload
 
-**Default value:**  false
+**Значение по умолчанию**  false
 
 Disable automatic live reloading of browser window.
 
 ### disablePathToLower
 
-**Default value:**  false
+**Значение по умолчанию**  false
 
 : Do not convert the url/path to lowercase.
 
 ### enableEmoji
 
-**Default value:**  false
+**Значение по умолчанию**  false
 
 Enable Emoji emoticons support for page content; see the [Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet/).
 
 ### enableGitInfo
 
-**Default value:**  false
+**Значение по умолчанию**  false
 
 Enable `.GitInfo` object for each page (if the Hugo site is versioned by Git). This will then update the `Lastmod` parameter for each page using the last git commit date for that content file.
 
 ### enableInlineShortcodes
 
-**Default value:**  false
+**Значение по умолчанию**  false
 
 Enable inline shortcode support. See [Inline Shortcodes](/templates/shortcode-templates/#inline-shortcodes).
 
 ### enableMissingTranslationPlaceholders
 
-**Default value:**  false
+**Значение по умолчанию**  false
 
 Show a placeholder instead of the default value or an empty string if a translation is missing.
 
 ### enableRobotsTXT
 
-**Default value:**  false
+**Значение по умолчанию**  false
 
 Enable generation of `robots.txt` file.
 
@@ -266,13 +268,13 @@ See [Front matter Configuration](#configure-front-matter).
 
 ### googleAnalytics
 
-**Default value:**  ""
+**Значение по умолчанию**  ""
 
 Google Analytics tracking ID.
 
 ### hasCJKLanguage
 
-**Default value:** false
+**Значение по умолчанию** false
 
 If true, auto-detect Chinese/Japanese/Korean Languages in the content. This will make `.Summary` and `.WordCount` behave correctly for CJK languages.
 
@@ -282,7 +284,7 @@ See [Image Processing Config](/content-management/image-processing/#imaging-conf
 
 ### languageCode
 
-**Default value:**  ""
+**Значение по умолчанию**  ""
 
 A language tag as defined by [RFC 5646](https://datatracker.ietf.org/doc/html/rfc5646). This value is used to populate:
 
@@ -319,19 +321,19 @@ Module config see [Module Config](/hugo-modules/configuration/).
 
 ### newContentEditor
 
-**Default value:** ""
+**Значение по умолчанию** ""
 
 The editor to use when creating new content.
 
 ### noChmod
 
-**Default value:** false
+**Значение по умолчанию** false
 
 Don't sync permission mode of files.
 
 ### noTimes
 
-**Default value:** false
+**Значение по умолчанию** false
 
 Don't sync modification time of files.
 
@@ -341,13 +343,13 @@ See [Configure Output Formats](#configure-additional-output-formats).
 
 ### paginate
 
-**Default value:** 10
+**Значение по умолчанию** 10
 
 Default number of elements per page in [pagination](/templates/pagination/).
 
 ### paginatePath
 
-**Default value:** "page"
+**Значение по умолчанию** "page"
 
 The path element used during pagination (`https://example.com/page/2`).
 
@@ -357,13 +359,13 @@ See [Content Management](/content-management/urls/#permalinks).
 
 ### pluralizeListTitles
 
-**Default value:** true
+**Значение по умолчанию** true
 
 Pluralize titles in lists.
 
 ### publishDir
 
-**Default value:** "public"
+**Значение по умолчанию** "public"
 
 The directory to where Hugo will write the final static site (the HTML files etc.).
 
@@ -373,13 +375,13 @@ The directory to where Hugo will write the final static site (the HTML files etc
 
 ### relativeURLs
 
-**Default value:** false
+**Значение по умолчанию** false
 
 Enable this to make all relative URLs relative to content root. Note that this does not affect absolute URLs.
 
 ### refLinksErrorLevel
 
-**Default value:** "ERROR"
+**Значение по умолчанию** "ERROR"
 
 When using `ref` or `relref` to resolve page links and a link cannot be resolved, it will be logged with this log level. Valid values are `ERROR` (default) or `WARNING`. Any `ERROR` will fail the build (`exit -1`).
 
@@ -389,7 +391,7 @@ URL to be used as a placeholder when a page reference cannot be found in `ref` o
 
 ### removePathAccents
 
-**Default value:** false
+**Значение по умолчанию** false
 
 Removes [non-spacing marks](https://www.compart.com/en/unicode/category/Mn) from [composite characters](https://en.wikipedia.org/wiki/Precomposed_character) in content paths.
 
@@ -399,7 +401,7 @@ content/post/hügó.md --> https://example.org/post/hugo/
 
 ### rssLimit
 
-**Default value:** -1 (unlimited)
+**Значение по умолчанию** -1 (unlimited)
 
 Maximum number of items in the RSS feed.
 
@@ -417,7 +419,7 @@ Default [sitemap configuration](/templates/sitemap-template/#configuration).
 
 ### summaryLength
 
-**Default value:** 70
+**Значение по умолчанию** 70
 
 The length of text in words to show in a [`.Summary`](/content-management/summaries/#automatic-summary-splitting).
 
@@ -431,13 +433,13 @@ See [Configure Taxonomies](/content-management/taxonomies#configure-taxonomies).
 
 ### themesDir
 
-**Default value:**  "themes"
+**Значение по умолчанию**  "themes"
 
 The directory where Hugo reads the themes from.
 
 ### timeout
 
-**Default value:** "30s"
+**Значение по умолчанию** "30s"
 
 Timeout for generating page contents, specified as a [duration](https://pkg.go.dev/time#Duration) or in milliseconds. *Note:*&nbsp;this is used to bail out of recursive content generation. You might need to raise this limit if your pages are slow to generate (e.g., because they require large image processing or depend on remote contents).
 
@@ -451,19 +453,19 @@ Site title.
 
 ### titleCaseStyle
 
-**Default value:**  "AP"
+**Значение по умолчанию**  "AP"
 
 See [Configure Title Case](#configure-title-case)
 
 ### uglyURLs
 
-**Default value:** false
+**Значение по умолчанию** false
 
 When enabled, creates URL of the form `/filename.html` instead of `/filename/`.
 
 ### watch
 
-**Default value:** false
+**Значение по умолчанию** false
 
 Watch filesystem for changes and recreate as needed.
 

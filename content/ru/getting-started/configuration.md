@@ -150,21 +150,21 @@ If Selective self-test is pending on power-up, resume after 0 minute delay.
 
 **Значение по умолчанию** false
 
-Include content already expired.
+Включить контент с истекшим сроком `expiryDate` в настройках Front Matter.
 
 ### buildFuture
 
 **Значение по умолчанию** false
 
-Include content with publishdate in the future.
+Включить контент с датой публикации в будущем `publishDate` в настройках Front Matter.
 
 ### caches
 
-See [Configure File Caches](#configure-file-caches)
+См. [Настройка кеширования файлов](#configure-file-caches)
 
 ### cascade
 
-Pass down default configuration values (front matter) to pages in the content tree. The options in site config is the same as in page front matter, see [Front Matter Cascade](/content-management/front-matter#front-matter-cascade).
+Передает значения конфигурации в заголовках Front Matter на страницы глубже в дереве содержимого. Параметры в конфигурации сайта такие же, как и в заголовках Front Matter, см. [Front Matter Cascade](/ru/content-management/front-matter#front-matter-cascade).
 
 ### canonifyURLs
 

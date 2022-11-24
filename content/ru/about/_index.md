@@ -1,6 +1,6 @@
 ---
 title: About Hugo
-linktitle: Overview
+linktitle: Обзор
 description: Hugo's features, roadmap, license, and motivation.
 date: 2017-02-01
 publishdate: 2017-02-01

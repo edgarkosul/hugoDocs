@@ -1,5 +1,5 @@
 ---
-title: Maintenance
+title: Обслуживание
 description: Some lists useful for the maintenance of the Hugo docs site.
 date: 2018-02-09
 categories: [maintenance]

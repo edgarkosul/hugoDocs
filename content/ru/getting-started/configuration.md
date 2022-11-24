@@ -1,7 +1,7 @@
 ---
-title: Configure Hugo
-linktitle: Configuration
-description: How to configure your Hugo site.
+title: Настройка Hugo
+linktitle: Конфигурация
+description: Как настроить сайт и среду разработки Hugo.
 date: 2013-07-01
 publishdate: 2017-01-02
 categories: [getting started,fundamentals]
@@ -16,15 +16,14 @@ aliases: [/overview/source-directory/,/overview/configuration/]
 toc: true
 ---
 
-## Configuration File
+## Файл конфигурации
 
-Hugo uses the `config.toml`, `config.yaml`, or `config.json` (if found in the
-site root) as the default site config file.
+Hugo использует файлы `config.toml`, `config.yaml` или `config.json` (если они находятся в
+корне сайта) в качестве файла конфигурации сайта по умолчанию.
 
-The user can choose to override that default with one or more site config files
-using the command-line `--config` switch.
+Пользователь может переопределить используемый по умолчанию файл конфигурации с помощью параметра командной строки `--config`.
 
-Examples:
+Например:
 
 ```txt
 hugo --config debugconfig.toml
@@ -32,17 +31,15 @@ hugo --config a.toml,b.toml,c.toml
 ```
 
 {{% note %}}
-Multiple site config files can be specified as a comma-separated string to the `--config` switch.
+Несколько файлов конфигурации сайта можно указать в виде строки, разделенной запятыми, после флага командной строки `--config`.
 {{% /note %}}
 
-{{< todo >}}TODO: distinct config.toml and others (the root object files){{< /todo >}}
+## Каталог конфигурации
 
-## Configuration Directory
+В дополнение к использованию одного файла конфигурации сайта, можно использовать каталог `configDir` (по умолчанию `config/`), для более простой организации и настройки, специфичной для среды.
 
-In addition to using a single site config file, one can use the `configDir` directory (default to `config/`) to maintain easier organization and environment specific settings.
-
-- Each file represents a configuration root object, such as `params.toml` for `[Params]`, `menu(s).toml` for `[Menu]`, `languages.toml` for `[Languages]` etc...
-- Each file's content must be top-level, for example:
+- Каждый файл представляет корневой объект, например  `params.toml` для `[Params]`, `menu(s).toml` для `[Menu]`, `languages.toml` для `[Languages]` и т. п. ...
+- Содержимое каждого файла представляющего раздел конфигурации (корневой объект) должно быть, перемещено на корневой уровень, например:
 
 {{< code-toggle file="config" >}}
 [Params]
@@ -53,8 +50,8 @@ In addition to using a single site config file, one can use the `configDir` dire
 foo = "bar"
 {{< /code-toggle >}}
 
-- Each directory holds a group of files containing settings unique to an environment.
-- Files can be localized to become language specific.
+- Каждый каталог содержит группу файлов, содержащих настройки, уникальные для среды (default, prodaction, staging).
+- Файлы могут быть локализованы, чтобы они соответствовали языку.
 
 
 ```txt

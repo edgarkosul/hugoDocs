@@ -54,23 +54,23 @@ title = "O meu blog"
 weight = 3
 {{< /code-toggle >}}
 
-Значения параметров не которые на определены в разделе `languages` сбрасываются до глобального значения этого параметра (в приведенном примере все языки будут использовать значение  `copyright` : Everything is mine). Это также работает и для `params`, в приведенном примере, для парметра `help` для французкого языка будет использоваться значение `Aide` и значение  `Help`  для всех остальных языков у которых этот параметр не указан.
+Значения параметров которые не определены в разделе `languages` сбрасываются до глобального значения этого параметра (в приведенном примере все языки будут использовать значение  `copyright` : Everything is mine). Это также работает и для `params`, в приведенном примере, для парметра `help` для французкого языка будет использоваться значение `Aide` и значение  `Help`  для всех остальных языков у которых этот параметр не указан.
 
-С указанной в примере конфигурацией весь контент, карта сайта, лента RSS, пагинации и страницы таксономий будут отображаться ниже `/` для английского языка (язык по умолчанию) и ниже директории `/fr` для французкого языка.
+С указанной в примере конфигурацией весь контент, карта сайта, лента RSS, пагинации и страницы таксономий будут отображаться ниже `/` для языка по умолчанию, в данном случае это английский, и ниже директории `/fr` для французкого языка.
 
 При использовании `Params` в заголовках Front Matter [шаблона одиночной страницы], не указывайте ключ `params` в основной конфигурации сайта в разделе конфигурации для перевода.
 
 `defaultContentLanguage` устанавливает язык по умолчанию для сайта. Если параметр не указан языком по умолчанию будет `en`.
 
-Если необходимо чтобы весь контент сайта для языка по умолчанию отображался ниже директории (`/en`) для английского языка по умолчанию, так же как и у других языков сайта, используйте параметр `defaultContentLanguageInSubdir: true`.
+Если необходимо чтобы весь контент сайта для языка по умолчанию отображался ниже директории (`/en`) в данном случае для английского языка по умолчанию, так же как и у других языков сайта, используйте параметр `defaultContentLanguageInSubdir: true`.
 
-Для каждого языка можно переопределить только очевидные не глобальные параметры. Примеры глобальных параметров, например `baseURL`, `buildDrafts`.
+Для каждого языка можно переопределить только очевидные не глобальные параметры. Примеры глобальных параметров, например `buildDrafts`. Глобальный параметр `baseURL` является исключением, см. [насройка отдельного хоста для каждого из переводов сайта]
 
 **Обратите внимание:** Используйте коды языков в нижнем регистре, даже при использовании региональных языков (например используйте ru-ru вместо ru-RU). При использовании в параметре `defaultContentLanguage` кода не в нижнем регистре могут возникать конфликты. Пожалуйста, отслеживайте решение этой проблемы тут [Hugo repository issue tracker](https://github.com/gohugoio/hugo/issues/7344)
 
 ### Отключить язык
 
-Вы можете отключить один или несколько языков.Это может быть полезно при работе над новым переводом.
+Вы можете отключить один или несколько языков. Это может быть полезно при работе над новым переводом.
 
 {{< code-toggle file="config" >}}
 disableLanguages = ["fr", "ja"]
@@ -135,7 +135,6 @@ Press Ctrl+C to stop
 
 Перезагрузка на лету и настройка `--navigateToChanged` между серверами будет работать как обычно.
 
-
 ## Перевод контента
 
 Есть два способа управлять переводами контента. Оба гарантируют, что каждой странице назначается язык и она связана с переводами этой страницы на другие языки.
@@ -160,7 +159,7 @@ Press Ctrl+C to stop
 
 ### Переводы в отдельных директориях
 
-Этод подход использует разные каталоги контента для каждого из языков. Каталог содержимого каждого языка задается с помощью параметра `contentDir`.
+Этот подход использует разные каталоги контента для каждого из языков. Каталог содержимого каждого языка задается с помощью параметра `contentDir`.
 
 {{< code-toggle file="config" >}}
 languages:
@@ -188,7 +187,7 @@ languages:
 
 Имея один и тот же **путь и базовое имя** (относительно их языкового каталога контента), части контента __связаны__ вместе как переведенные страницы.
 
-### Преназначение связывания пнреведенных страниц
+### Преназначение связывания переведенных страниц
 
 Любые страницы с одним и тем же значением `translationKey` в заголовках Front Matter будут связаны как переведенные страницы независимо от базового имени или местоположения.
 
@@ -208,7 +207,7 @@ translationKey: "about"
 
 Поскольку для формирования ссылок используются пути и имена файлов, все переведенные страницы будут иметь один и тот же URL-адрес (кроме языкового подкаталога).
 
-Чтобы локализовать URL адреса передодов, [`slug`]({{< ref "/content-management/organization/index.md#slug" >}}) или [`url`]({{< ref "/content-management/organization/index.md#url" >}}) в заголовках Front Matter могут быть назначены любыми отличными от значния по умолчанию.
+Чтобы локализовать URL адреса передодов, [`slug`]({{< ref "/content-management/organization/index.md#slug" >}}) или [`url`]({{< ref "/content-management/organization/index.md#url" >}}) в заголовках Front Matter могут быть назначены любыми отличными от значения по умолчанию.
 
 Например, Французкий перевод (`content/about.fr.md`) может иметь свой локализированный `slug`.
 
@@ -217,7 +216,7 @@ Title: A Propos
 slug: "a-propos"
 {{< /code-toggle >}}
 
-В процессе сборки, Hugo разместит оба перевода в директории `/about/` и `/fr/a-propos/` и сохранит их связь как переведенных страниц.
+В процессе сборки, Hugo разместит переводы в директориях `/about/` и `/fr/a-propos/` соответственно и сохранит их связь как переведенных страниц.
 
 {{% note %}}
 Если используете `url`, не забудьте включить в путь языковую поддиректорию: `/fr/compagnie/a-propos/`.
@@ -536,38 +535,50 @@ other="Sobre mim"
 </ul>
 {{< /code >}}
 
-## Missing Translations
+## Отсутствующие переводы
 
-If a string does not have a translation for the current language, Hugo will use the value from the default language. If no default value is set, an empty string will be shown.
+Если у строки нет перевода на текущий язык, Hugo будет использовать значение из языка по умолчанию. Если значение по умолчанию не установлено, будет показана пустая строка.
 
-While translating a Hugo website, it can be handy to have a visual indicator of missing translations. The [`enableMissingTranslationPlaceholders` configuration option][config] will flag all untranslated strings with the placeholder `[i18n] identifier`, where `identifier` is the id of the missing translation.
+При переводе веб-сайта Hugo может быть удобно иметь визуальный индикатор отсутствующих переводов. [Параметр конфигурации `enableMissingTranslationPlaceholders`][config] пометит все непереведенные строки плейсхолдером `[i18n] identifier`, где `identifier` это идентификатор отсутствующего перевода.
 
 {{% note %}}
-Hugo will generate your website with these missing translation placeholders. It might not be suitable for production environments.
+Hugo создаст ваш веб-сайт с этими отсутствующими заполнителями перевода. Это скорее всего не подойдет для режима продакшн.
 {{% /note %}}
 
-For merging of content from other languages (i.e. missing content translations), see [lang.Merge].
+Для слияния контента с другими языками (т. е. отсутствующих переводов контента) см. [lang.Merge].
 
-To track down missing translation strings, run Hugo with the `--printI18nWarnings` flag:
+Чтобы отследить отсутствующие строки перевода, запустите Hugo с флагом `--printI18nWarnings`:
 
 ```bash
 hugo --printI18nWarnings | grep i18n
 i18n|MISSING_TRANSLATION|en|wordCount
 ```
 
-## Multilingual Themes support
+## Поддержка многоязычных тем
 
-To support Multilingual mode in your themes, some considerations must be taken for the URLs in the templates. If there is more than one language, URLs must meet the following criteria:
+Для поддержки многоязычного режима в ваших темах необходимо учитывать некоторые особенности URL-адресов в шаблонах. Если используется более одного языка, URL-адреса должны соответствовать следующим критериям:
 
-* Come from the built-in `.Permalink` or `.RelPermalink`
-* Be constructed with the [`relLangURL` template function][rellangurl] or the [`absLangURL` template function][abslangurl] **OR** be prefixed with `{{ .LanguagePrefix }}`
+* Соответствовать встроенным `.Permalink` или `.RelPermalink`
+* Быть построенным с [`relLangURL` template function][rellangurl] или [`absLangURL` template function][abslangurl] **ИЛИ** иметь префикс`{{ .LanguagePrefix }}`
 
-If there is more than one language defined, the `LanguagePrefix` variable will equal `/en` (or whatever your `CurrentLanguage` is). If not enabled, it will be an empty string (and is therefore harmless for single-language Hugo websites).
+Если определено более одного языка, переменная `LanguagePrefix` будет равна `/en` (или тому, что является `CurrentLanguage`). Если языки не определены, это будет пустая строка (поэтому она безвредна для одноязычных веб-сайтов Hugo).
 
 
-## Generate multilingual content with `hugo new`
+## Создание многоязычного контента с помощью `hugo new`
 
-Currently, `hugo new` is not ready to support generating multilingual content. But there is a [proposal topic](https://github.com/gohugoio/hugo/issues/7732) about this in GitHub issue to discuss how it should work.
+Если вы размещаете контент с переводами в одном каталоге:
+
+```text
+hugo new post/test.en.md
+hugo new post/test.de.md
+```
+
+Если вы упорядочиваете контент с переводами по разным каталогам:
+
+```text
+hugo new content/en/post/test.md
+hugo new content/de/post/test.md
+```
 
 [abslangurl]: /ru/functions/abslangurl
 [config]: /ru/getting-started/configuration/
@@ -589,3 +600,4 @@ Currently, `hugo new` is not ready to support generating multilingual content. B
 [RFC 5646]: https://tools.ietf.org/html/rfc5646
 [шаблона одиночной страницы]: /ru/templates/single-page-templates/
 [time.Format]: /ru/functions/dateformat
+[Насройка отдельного хоста для каждого из переводов сайта]: #насройка-отдельного-хоста-для-каждого-из-переводов-сайта

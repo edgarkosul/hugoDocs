@@ -1,6 +1,6 @@
 ---
-title: Многоязычный режим
-linkTitle: Многоязычность
+title: Многоязычный режим Hugo
+linkTitle: Настройка языков Hugo
 description: Hugo поддерживает создание веб-сайтов одновременно на нескольких языках.
 categories: [content management]
 keywords: [multilingual,i18n, internationalization]

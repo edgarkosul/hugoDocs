@@ -170,172 +170,174 @@ If Selective self-test is pending on power-up, resume after 0 minute delay.
 
 **Значение по умолчанию** false
 
-Enable to turn relative URLs into absolute.
+Включите, чтобы превратить относительные URL-адреса в абсолютные.
 
 ### contentDir
 
 **Значение по умолчанию** "content"
 
-The directory from where Hugo reads content files. {{% module-mounts-note-ru %}}
+Директория из которой Hugo читает файлы с контентом {{% module-mounts-note-ru %}}
 
 ### copyright
 
 **Значение по умолчанию** ""
 
-Copyright notice for your site, typically displayed in the footer.
+Копирайт уведомление вашего сайта, обычно располагается в подвале сайта.
 
 ### dataDir
 
 **Значение по умолчанию** "data"
 
-The directory from where Hugo reads data files. {{% module-mounts-note-ru %}}
+Каталог, из которого Hugo читает файлы c данными. Что в некотором роде является аналогом базы данных. {{% module-mounts-note-ru %}}
 
 ### defaultContentLanguage
 
 **Значение по умолчанию** "en"
 
-Content without language indicator will default to this language.
+Контент без индикатора языка по умолчанию будет на этом языке.
 
 ### defaultContentLanguageInSubdir
 
+
 **Значение по умолчанию**  false
 
-Render the default content language in subdir, e.g. `content/en/`. The site root `/` will then redirect to `/en/`.
+Параметр позволяет разместить содержимое на языке по умолчанию в подкаталоге, также как и содержимое на переведенных языках, например. `content/en/`. Корень сайта `/` будет перенаправлен на `/en/`.
 
 ### disableAliases
 
 **Значение по умолчанию**  false
 
-Will disable generation of alias redirects. Note that even if `disableAliases` is set, the aliases themselves are preserved on the page. The motivation with this is to be able to generate 301 redirects in an `.htaccess`, a Netlify `_redirects` file or similar using a custom output format.
+Отключает генерацию редиректа на алиасы. Обратите внимание, что даже если `disableAliases` установлен в значение true, сами по себе алиасы страницы сохраняются. Это сделано для того, чтобы иметь возможность генерировать 301 редиректы в `.htaccess`, в  Netlify `_redirects` файле или подобных файлах настройки, при использовании пользовательских форматов вывода.
 
 ### disableHugoGeneratorInject
 
 **Значение по умолчанию**  false
 
-Hugo will, by default, inject a generator meta tag in the HTML head on the _home page only_. You can turn it off, but we would really appreciate if you don't, as this is a good way to watch Hugo's popularity on the rise.
+Hugo по умолчанию вставит метатег генератора в заголовок HTML на только домашней странице. Вы можете отключить его, но мы будем очень признательны, если вы этого не сделаете, так как это хороший способ наблюдать за ростом популярности Hugo.
 
 ### disableKinds
 
 **Значение по умолчанию**  []
 
-Enable disabling of all pages of the specified *Kinds*. Allowed values in this list: `"page"`, `"home"`, `"section"`, `"taxonomy"`, `"term"`, `"RSS"`, `"sitemap"`, `"robotsTXT"`, `"404"`.
+Включить отключение всех страниц указанных *Типов*. Допустимые значения в этом списке: `"page"`, `"home"`, `"section"`, `"taxonomy"`, `"term"`, `"RSS"`, `"sitemap"`, `"robotsTXT"`, `"404"`.
 
 ### disableLiveReload
 
 **Значение по умолчанию**  false
 
-Disable automatic live reloading of browser window.
+Отключает автоматическую перезагрузку окна браузера в реальном времени.
 
 ### disablePathToLower
 
 **Значение по умолчанию**  false
 
-: Do not convert the url/path to lowercase.
+: Не преобразовывать URL в нижний регистр.
 
 ### enableEmoji
 
 **Значение по умолчанию**  false
 
-Enable Emoji emoticons support for page content; see the [Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet/).
+Включить поддержку смайликов Emoji для содержимого страницы; см. [Шпаргалку по эмодзи](https://www.webpagefx.com/tools/emoji-cheat-sheet/).
 
-### enableGitInfo
+### enableGitInfo 
 
 **Значение по умолчанию**  false
 
-Enable `.GitInfo` object for each page (if the Hugo site is versioned by Git). This will then update the `Lastmod` parameter for each page using the last git commit date for that content file.
+Включает объект `.GitInfo` для каждой страницы (если версия сайта Hugo управляется Git). Эта настройка  обновит параметр `Lastmod` для каждой страницы, используя дату последнего коммита git для этого файла.
 
 ### enableInlineShortcodes
 
 **Значение по умолчанию**  false
 
-Enable inline shortcode support. See [Inline Shortcodes](/templates/shortcode-templates/#inline-shortcodes).
+Включает  поддержку встроенных в файл контента шорткодов. Позволяет выполнять специальные шаблоны `Go Text` из файлов содержимого. См. [Встроенные шорткоды](/ru/templates/shortcode-templates/#inline-shortcodes).
+
 
 ### enableMissingTranslationPlaceholders
 
 **Значение по умолчанию**  false
 
-Show a placeholder instead of the default value or an empty string if a translation is missing.
+Показывать заполнитель ( плейсхолдер ) вместо значения по умолчанию или пустую строку, если перевод отсутствует.
 
 ### enableRobotsTXT
 
 **Значение по умолчанию**  false
 
-Enable generation of `robots.txt` file.
+Включить создание файла `robots.txt`.
 
 ### frontmatter
 
-See [Front matter Configuration](#configure-front-matter).
+См.  [Настройка заголовков Front Matter](#configure-front-matter).
 
 ### googleAnalytics
 
 **Значение по умолчанию**  ""
 
-Google Analytics tracking ID.
+Идентификатор отслеживания Google Analytics.
 
 ### hasCJKLanguage
 
 **Значение по умолчанию** false
 
-If true, auto-detect Chinese/Japanese/Korean Languages in the content. This will make `.Summary` and `.WordCount` behave correctly for CJK languages.
+Если установлено значение true,  Hugo автоматически определяет китайский/японский/корейский языки в содержимом. Это заставит `.Summary` и `.WordCount` вести себя правильно для языков CJK.
 
 ### imaging
 
-See [Image Processing Config](/content-management/image-processing/#imaging-configuration).
+См.  [Конфигурация обработки изображений](/ru/content-management/image-processing/#imaging-configuration).
 
 ### languageCode
 
 **Значение по умолчанию**  ""
 
-A language tag as defined by [RFC 5646](https://datatracker.ietf.org/doc/html/rfc5646). This value is used to populate:
+Тег языка, определенный в [RFC 5646] (https://datatracker.ietf.org/doc/html/rfc5646). Это значение используется для заполнения:
 
-- The `<language>` element in the internal [RSS template](https://github.com/gohugoio/hugo/blob/master/tpl/tplimpl/embedded/templates/_default/rss.xml)
-- The `lang` attribute of the `<html>` element in the internal [alias template](https://github.com/gohugoio/hugo/blob/master/tpl/tplimpl/embedded/templates/alias.html)
+- Элемент `<language>` во внутреннем [RSS шаблоне](https://github.com/gohugoio/hugo/blob/master/tpl/tplimpl/embedded/templates/_default/rss.xml)
+- Атрибут `lang` элемента `<html>` во внутреннем [alias шаблоне](https://github.com/gohugoio/hugo/blob/master/tpl/tplimpl/embedded/templates/alias.html)
 
 ### languages
 
-See [Configure Languages](/content-management/multilingual/#configure-languages).
+См.  [Настройка языков](/ru/content-management/multilingual/#configure-languages).
 
 ### disableLanguages
 
-See [Disable a Language](/content-management/multilingual/#disable-a-language)
+См.  [Отключить язык](/ru/content-management/multilingual/#disable-a-language)
 
 ### markup
 
-See [Configure Markup](/getting-started/configuration-markup).
+См.  [Настройка  Markup](/ru/getting-started/configuration-markup).
 
 ### mediaTypes
 
-See [Configure Media Types](/templates/output-formats/#media-types).
+См.  [Настройка MIME типов](/ru/templates/output-formats/#media-types).
 
 ### menus
 
-See [Add Non-content Entries to a Menu](/content-management/menus/#add-non-content-entries-to-a-menu).
+См.  [Добавить не связанные с контентом  записи  в меню](/ru/content-management/menus/#add-non-content-entries-to-a-menu).
 
 ### minify
 
-See [Configure Minify](#configure-minify)
+См.  [Настройка минификации файлов](#configure-minify)
 
 ### module
 
-Module config see [Module Config](/hugo-modules/configuration/).
+Конфигурация модулей. См. [Конфигурация модулей](/ru/hugo-modules/configuration/).
 
 ### newContentEditor
 
 **Значение по умолчанию** ""
 
-The editor to use when creating new content.
+Редактор используемый при создании нового контента.
 
 ### noChmod
 
 **Значение по умолчанию** false
 
-Don't sync permission mode of files.
+Не синхронизировать права файлов.
 
 ### noTimes
 
 **Значение по умолчанию** false
 
-Don't sync modification time of files.
+Не синхронизировать время модификации файлов.
 
 ### outputFormats
 
@@ -345,7 +347,7 @@ See [Configure Output Formats](#configure-additional-output-formats).
 
 **Значение по умолчанию** 10
 
-Default number of elements per page in [pagination](/templates/pagination/).
+Default number of elements per page in [pagination](/ru/templates/pagination/).
 
 ### paginatePath
 
@@ -355,7 +357,7 @@ The path element used during pagination (`https://example.com/page/2`).
 
 ### permalinks
 
-See [Content Management](/content-management/urls/#permalinks).
+See [Content Management](/ru/content-management/urls/#permalinks).
 
 ### pluralizeListTitles
 
@@ -371,7 +373,7 @@ The directory to where Hugo will write the final static site (the HTML files etc
 
 ### related
 
-: See [Related Content](/content-management/related/#configure-related-content).
+: See [Related Content](/ru//content-management/related/#configure-related-content).
 
 ### relativeURLs
 
@@ -407,35 +409,35 @@ Maximum number of items in the RSS feed.
 
 ### sectionPagesMenu
 
-See ["Section Menu for Lazy Bloggers"](/templates/menu-templates/#section-menu-for-lazy-bloggers).
+See ["Section Menu for Lazy Bloggers"](/ru/templates/menu-templates/#section-menu-for-lazy-bloggers).
 
 ### security
 
-See [Security Policy](/about/security-model/#security-policy)
+See [Security Policy](/ru/about/security-model/#security-policy)
 
 ### sitemap
 
-Default [sitemap configuration](/templates/sitemap-template/#configuration).
+Default [sitemap configuration](/ru/templates/sitemap-template/#configuration).
 
 ### summaryLength
 
 **Значение по умолчанию** 70
 
-The length of text in words to show in a [`.Summary`](/content-management/summaries/#automatic-summary-splitting).
+The length of text in words to show in a [`.Summary`](/ru/content-management/summaries/#automatic-summary-splitting).
 
 ### taxonomies
 
-See [Configure Taxonomies](/content-management/taxonomies#configure-taxonomies).
+See [Configure Taxonomies](/ru/content-management/taxonomies#configure-taxonomies).
 
 ### theme
 
-: See [Module Config](/hugo-modules/configuration/#module-config-imports) for how to import a theme.
+: See [Module Config](/ru/hugo-modules/configuration/#module-config-imports) for how to import a theme.
 
 ### themesDir
 
 **Значение по умолчанию**  "themes"
 
-The directory where Hugo reads the themes from.
+Каталог, из которого Hugo читает темы.
 
 ### timeout
 
@@ -445,7 +447,7 @@ Timeout for generating page contents, specified as a [duration](https://pkg.go.d
 
 ### timeZone
 
-The time zone (or location), e.g. `Europe/Oslo`,  used to parse front matter dates without such information and in the [`time` function](/functions/time/). The list of valid values may be system dependent, but should include `UTC`, `Local`, and any location in the [IANA Time Zone database](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).
+The time zone (or location), e.g. `Europe/Oslo`,  used to parse front matter dates without such information and in the [`time` function](/ru/functions/time/). The list of valid values may be system dependent, but should include `UTC`, `Local`, and any location in the [IANA Time Zone database](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).
 
 ### title
 
@@ -499,7 +501,7 @@ useResourceCacheWhen
 : When to use the cached resources in `/resources/_gen` for PostCSS and ToCSS. Valid values are `never`, `always` and `fallback`. The last value means that the cache will be tried if PostCSS/extended version is not available.
 
 writeStats
-: When enabled, a file named `hugo_stats.json` will be written to your project root with some aggregated data about the build, e.g. list of HTML entities published to be used to do [CSS pruning](/hugo-pipes/postprocess/#css-purging-with-postcss). If you're only using this for the production build, you should consider placing it below [config/production](/getting-started/configuration/#configuration-directory). It's also worth mentioning that, due to the nature of the partial server builds, new HTML entities will be added when you add or change them while the server is running, but the old values will not be removed until you restart the server or run a regular `hugo` build.
+: When enabled, a file named `hugo_stats.json` will be written to your project root with some aggregated data about the build, e.g. list of HTML entities published to be used to do [CSS pruning](/ru/hugo-pipes/postprocess/#css-purging-with-postcss). If you're only usiang this for the production build, you should consider placing it below [config/production](/ru/getting-started/configuration/#configuration-directory). It's also worth mentioning that, due to the nature of the partial server builds, new HTML entities will be added when you add or change them while the server is running, but the old values will not be removed until you restart the server or run a regular `hugo` build.
 
 **Note** that the prime use case for this is purging of unused CSS; it is built for speed and there may be false positives (e.g., detection of HTML elements that are not HTML elements).
 
@@ -539,7 +541,7 @@ Referrer-Policy = "strict-origin-when-cross-origin"
 Content-Security-Policy = "script-src localhost:1313"
 {{< /code-toggle >}}
 
-You can also specify simple redirects rules for the server. The syntax is again similar to Netlify's.
+Вы также можете указать простые правила перенаправления для сервера. Синтаксис снова похож на Netlify.
 
 Note that a `status` code of 200 will trigger a [URL rewrite](https://docs.netlify.com/routing/redirects/rewrites-proxies/), which is what you want in SPA situations, e.g:
 
@@ -581,7 +583,7 @@ Hugo will, by default, render all 404 errors when running `hugo server` with the
 
 ## Configure Title Case
 
-Set `titleCaseStyle` to specify the title style used by the [title](/functions/title/) template function and the automatic section titles in Hugo. It defaults to [AP Stylebook](https://www.apstylebook.com/) for title casing, but you can also set it to `Chicago` or `Go` (every word starts with a capital letter).
+Set `titleCaseStyle` to specify the title style used by the [title](/ru/functions/title/) template function and the automatic section titles in Hugo. It defaults to [AP Stylebook](https://www.apstylebook.com/) for title casing, but you can also set it to `Chicago` or `Go` (every word starts with a capital letter).
 
 ## Configuration Environment Variables
 

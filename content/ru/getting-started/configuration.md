@@ -443,36 +443,39 @@ See [Configure Taxonomies](/ru/content-management/taxonomies#configure-taxonomie
 
 **Значение по умолчанию** "30s"
 
-Timeout for generating page contents, specified as a [duration](https://pkg.go.dev/time#Duration) or in milliseconds. *Note:*&nbsp;this is used to bail out of recursive content generation. You might need to raise this limit if your pages are slow to generate (e.g., because they require large image processing or depend on remote contents).
+Время ожидания при  генерации страницы с контентом.  Задается в  [Go time duration](https://pkg.go.dev/time#Duration) или в миллисекундах. *Примечание.* Используется для предотвращения рекурсивной  генерации контента. Возможно, вам придется увеличить это ограничение, если ваши страницы генерируются медленно (например, потому что они требуют обработки больших изображений или зависят от удаленного содержимого).
 
 ### timeZone
 
-The time zone (or location), e.g. `Europe/Oslo`,  used to parse front matter dates without such information and in the [`time` function](/ru/functions/time/). The list of valid values may be system dependent, but should include `UTC`, `Local`, and any location in the [IANA Time Zone database](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).
+Часовой пояс (или местоположение), например. `Europe/Oslo`, используется для разбора дат указанных в заголовках Front Matter без  информации о часовом поясе и в [функции `time`](/ru/functions/time/). Список допустимых значений может зависеть от системы, но должен соотоветствовать любому местоположению в [базе данных часовых поясов IANA](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).
 
 ### title
 
-Site title.
+Заголовок сайта.
 
 ### titleCaseStyle
 
 **Значение по умолчанию**  "AP"
 
-See [Configure Title Case](#configure-title-case)
+См.  [Настройка регистра заголовка](#настройка-регистра-заголовка)
 
 ### uglyURLs
 
 **Значение по умолчанию** false
 
-When enabled, creates URL of the form `/filename.html` instead of `/filename/`.
+Если `true`,  генерируется URL-адрес вида `/имя_файла.html` вместо `/имя_файла/`.
 
 ### watch
 
 **Значение по умолчанию** false
 
-Watch filesystem for changes and recreate as needed.
+Следить за изменениями в файловой системе и  запускать процесс сборки сайта по мере необходимости.
+
+
+---
 
 {{% note %}}
-If you are developing your site on a \*nix machine, here is a handy shortcut for finding a configuration option from the command line:
+Если вы разрабатываете свой сайт на компьютере с  \*nix совместимой операционной системой, вот удобная команда для поиска параметра конфигурации из командной строки:
 ```txt
 cd ~/sites/yourhugosite
 hugo config | grep emoji
@@ -484,18 +487,6 @@ which shows output like
 enableemoji: true
 ```
 {{% /note %}}
-
-## Configure Build
-
-The `build` configuration section contains global build-related configuration options.
-
-{{< code-toggle file="config">}}
-[build]
-useResourceCacheWhen="fallback"
-writeStats = false
-noJSConfigInAssets = false
-{{< /code-toggle >}}
-
 
 useResourceCacheWhen
 : When to use the cached resources in `/resources/_gen` for PostCSS and ToCSS. Valid values are `never`, `always` and `fallback`. The last value means that the cache will be tried if PostCSS/extended version is not available.

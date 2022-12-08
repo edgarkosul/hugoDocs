@@ -457,7 +457,7 @@ See [Configure Taxonomies](/ru/content-management/taxonomies#configure-taxonomie
 
 **Значение по умолчанию**  "AP"
 
-См.  [Настройка регистра заголовка](#настройка-регистра-заголовка)
+См. [Настройка регистра заголовка](#настройка-регистра-заголовка)
 
 ### uglyURLs
 
@@ -489,19 +489,20 @@ enableemoji: true
 {{% /note %}}
 
 useResourceCacheWhen
-: When to use the cached resources in `/resources/_gen` for PostCSS and ToCSS. Valid values are `never`, `always` and `fallback`. The last value means that the cache will be tried if PostCSS/extended version is not available.
+
+: Когда использовать ресурсы кешированные в `/resources/_gen` для PostCSS и ToCSS. Допустимые значения: `never` (никогда), `always` (всегда) и `fallback`. Последнее значение означает, что кэш будет использован, если  не доступна расширенная версия PostCSS.
 
 writeStats
-: When enabled, a file named `hugo_stats.json` will be written to your project root with some aggregated data about the build, e.g. list of HTML entities published to be used to do [CSS pruning](/ru/hugo-pipes/postprocess/#css-purging-with-postcss). If you're only usiang this for the production build, you should consider placing it below [config/production](/ru/getting-started/configuration/#configuration-directory). It's also worth mentioning that, due to the nature of the partial server builds, new HTML entities will be added when you add or change them while the server is running, but the old values will not be removed until you restart the server or run a regular `hugo` build.
+: Если этот параметр включен, файл с именем `hugo_stats.json` будет записан в корень вашего проекта с некоторыми агрегированными данными о сборке, например список HTML страниц, опубликованных для выполнения [очистки CSS](/ru/hugo-pipes/postprocess/#css-purging-with-postcss). Если параметр используется в режиме prodaction, вы должны разместить  этот параметр в файле конфигурации размещенном в директории [config/production](/ru/getting-started/configuration/#configuration-directory). Также стоит упомянуть, что из-за характера частичных сборок сервера новые объекты HTML будут добавляться при добавлении или изменении их во время работы сервера, но старые значения не будут удалены до тех пор, пока вы не перезапустите сервер или не запустите обычную сборку командой `hugo`.
 
-**Note** that the prime use case for this is purging of unused CSS; it is built for speed and there may be false positives (e.g., detection of HTML elements that are not HTML elements).
+**Обратите внимание**, что основной вариант использования этого параметра это очистка неиспользуемого CSS; он создан для скорости, и могут быть ложные срабатывания (например, обнаружение элементов HTML, которые не являются элементами HTML).
 
 noJSConfigInAssets
-: Turn off writing a `jsconfig.json` into your `/assets` folder with mapping of imports from running [js.Build](https://gohugo.io/hugo-pipes/js). This file is intended to help with intellisense/navigation inside code editors such as [VS Code](https://code.visualstudio.com/). Note that if you do not use `js.Build`, no file will be written.
+: Отключает запись файла `jsconfig.json` в директорию `/assets` с отображением импорта из запущенного [js.Build](https://gohugo.io/hugo-pipes/js). Этот файл предназначен для помощи в использовании Intellisense/навигации внутри редакторов кода, таких как [VS Code](https://code.visualstudio.com/). Обратите внимание, что если вы не используете `js.Build`, файл не будет записан.
 
 ## Configure Server
 
-This is only relevant when running `hugo server`, and it allows to set HTTP headers during development, which allows you to test out your Content Security Policy and similar. The configuration format matches [Netlify's](https://docs.netlify.com/routing/headers/#syntax-for-the-netlify-configuration-file) with slightly more powerful [Glob matching](https://github.com/gobwas/glob):
+Этот праметр имеет значение только в режиме разработки (команда `hugo server`) и позволяет устанавливать  HTTP заголовки, что позволяет вам протестировать вашу политику безопасности контента и тому подобное. Формат конфигурации соответствует [Netlify's](https://docs.netlify.com/routing/headers/#syntax-for-the-netlify-configuration-file) с немного более мощным [сопоставлением Glob](https://github. com/gobwas/glob):
 
 
 {{< code-toggle file="config">}}
@@ -517,8 +518,7 @@ Referrer-Policy = "strict-origin-when-cross-origin"
 Content-Security-Policy = "script-src localhost:1313"
 {{< /code-toggle >}}
 
-Since this is "development only", it may make sense to put it below the `development` environment:
-
+Так как этот параметр используется только в среде разработки (`hugo server`), файл с этой настройкой конфигурации  имеет смысл разместить в ниже директории `development`:
 
 {{< code-toggle file="config/development/server">}}
 [[headers]]
@@ -534,7 +534,7 @@ Content-Security-Policy = "script-src localhost:1313"
 
 Вы также можете указать простые правила перенаправления для сервера. Синтаксис снова похож на Netlify.
 
-Note that a `status` code of 200 will trigger a [URL rewrite](https://docs.netlify.com/routing/redirects/rewrites-proxies/), which is what you want in SPA situations, e.g:
+Обратите внимание, что код состояния 200 вызовет [перезапись URL](https://docs.netlify.com/routing/redirects/rewrites-proxy/), например:
 
 {{< code-toggle file="config/development/server">}}
 [[redirects]]
@@ -544,13 +544,13 @@ status = 200
 force = false
 {{< /code-toggle >}}
 
-Setting `force=true` will make a redirect even if there is existing content in the path. Note that before Hugo 0.76  `force` was the default behavior, but this is inline with how Netlify does it.
+Установка `force=true` осуществит перенаправление, даже если в директориях есть существующий контент. Обратите внимание, что до Hugo 0.76 `force` было поведением по умолчанию, что соответствует тому, как это делает Netlify.
 
-## 404 Server Error Page
+## Страница 404 ошибки сервера
 
 {{< new-in "0.103.0" >}}
 
-Hugo will, by default, render all 404 errors when running `hugo server` with the `404.html` template. Note that if you have already added one or more redirects to your [Server Config](#configure-server), you need to add the 404 redirect explicitly, e.g:
+По умолчанию в режиме разработки (команда `hugo server`) все 404 ошибки отображаются с помощью шаблона `404.html` Обратите внимание, что если вы уже добавили одно или несколько перенаправлений в [Конфигурации сервера](#server-config), вам необходимо явно добавить перенаправление 404, например:
 
 ```toml
 [[redirects]]
@@ -559,42 +559,29 @@ Hugo will, by default, render all 404 errors when running `hugo server` with the
     status = 404
 ```
 
-## 404 Server Error Page
+## Настройка регистра заголовка
 
-{{< new-in "0.103.0" >}}
+Задайте значение параметру `titleCaseStyle` чтобы настроить регистр символов в [заголовке](/ru/functions/title/) используемом в  функции шаблона и автоматических заголовках разделов в Hugo. По умолчанию `AP`, но можно задать значения `Chicago` или `Go` (каждое слово начинается с заглавной буквы).
 
-Hugo will, by default, render all 404 errors when running `hugo server` with the `404.html` template. Note that if you have already added one or more redirects to your [Server Config](#server-config), you need to add the 404 redirect explicitly, e.g:
-
-```toml
-[[redirects]]
-    from   = "/**"
-    to     = "/404.html"
-    status = 404
-```
-
-## Configure Title Case
-
-Set `titleCaseStyle` to specify the title style used by the [title](/ru/functions/title/) template function and the automatic section titles in Hugo. It defaults to [AP Stylebook](https://www.apstylebook.com/) for title casing, but you can also set it to `Chicago` or `Go` (every word starts with a capital letter).
-
-## Configuration Environment Variables
+## Конфигурация переменных окружения
 
 HUGO_NUMWORKERMULTIPLIER
-: Can be set to increase or reduce the number of workers used in parallel processing in Hugo. If not set, the number of logical CPUs will be used.
+: Эту переменную можно настроить для увеличения или уменьшения количества рабочих процессов, используемых при параллельной обработке в Hugo. Если не задано, будет использоваться количество логических ЦП.
 
-## Configuration Lookup Order
+## Порядок поиска файла конфигурации
 
-Similar to the template [lookup order][], Hugo has a default set of rules for searching for a configuration file in the root of your website's source directory as a default behavior:
+Подобно [порядку поиска][] шаблона, Hugo имеет набор правил по умолчанию для поиска файла конфигурации в корне исходного каталога вашего веб-сайта.  По умолчанию порядок таков:
 
 1. `./config.toml`
 2. `./config.yaml`
 3. `./config.json`
 
-In your `config` file, you can direct Hugo as to how you want your website rendered, control your website's menus, and arbitrarily define site-wide parameters specific to your project.
+В вашем `config` файле вы можете указывать Hugo, как вы хотите, чтобы ваш веб-сайт отображался, управлять меню вашего веб-сайта и произвольно определять параметры всего сайта, специфичные для вашего проекта.
+В вашем `config` файле вы можете указывать Hugo, как вы хотите, чтобы ваш веб-сайт отображался, управлять меню вашего веб-сайта и произвольно определять параметры всего сайта, специфичные для вашего проекта.
 
+## Пример конфигурации
 
-## Example Configuration
-
-The following is a typical example of a configuration file. The values nested under `params:` will populate the [`.Site.Params`][] variable for use in [templates][]:
+Ниже приведен типичный пример файла конфигурации. Значения, вложенные в `params:`, будут заполнять переменную [`.Site.Params`][] для использования в [шаблонах][]:
 
 {{< code-toggle file="config">}}
 baseURL: "https://yoursite.example.com/"
@@ -772,12 +759,12 @@ dir
 - [YAML Spec][yaml]
 - [JSON Spec][json]
 
-[`.Site.Params`]: /variables/site/
-[directory structure]: /getting-started/directory-structure
+[`.Site.Params`]: /ru/variables/site/
+[directory structure]: /ru/getting-started/directory-structure
 [json]: https://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf "Specification for JSON, JavaScript Object Notation"
-[lookup order]: /templates/lookup-order/
-[Output Formats]: /templates/output-formats/
-[templates]: /templates/
+[порядку поиска]: /ru/templates/lookup-order/
+[Output Formats]: /ru/templates/output-formats/
+[шаблонах]: /ru/templates/
 [toml]: https://github.com/toml-lang/toml
 [yaml]: https://yaml.org/spec/
-[static-files]: /content-management/static-files/
+[static-files]: /ru/content-management/static-files/

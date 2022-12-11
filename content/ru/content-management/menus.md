@@ -63,7 +63,7 @@ menu:
     weight: 20
 {{< /code-toggle >}}
 
-## Add Non-content Entries to a Menu
+## Добавить не связанные с контентом записи в меню
 
 You can also add entries to menus that aren’t attached to a piece of content. This takes place in your Hugo project's [`config` file][config] (see [Menu Entry Properties][me-props] for full details of available variables).
 

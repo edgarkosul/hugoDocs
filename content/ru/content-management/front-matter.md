@@ -151,7 +151,7 @@ include_toc: true
 show_comments: false
 {{</ code-toggle >}}
 
-## Front Matter Cascade
+## Каскады Front Matter
 
 Any node or section can pass down to descendants a set of Front Matter values as long as defined underneath the reserved `cascade` Front Matter key.
 

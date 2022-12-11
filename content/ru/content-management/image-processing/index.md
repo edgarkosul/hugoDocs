@@ -379,7 +379,7 @@ Call the shortcode from your Markdown like this:
 Note the self-closing shortcode syntax above. You may call the `imgproc` shortcode with or without **inner content**.
 {{% /note %}}
 
-## Imaging Configuration
+## Конфигурация обработки изображений
 
 ### Processing Options
 

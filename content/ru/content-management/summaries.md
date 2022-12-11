@@ -23,7 +23,7 @@ With the use of the `.Summary` [page variable][pagevariables], Hugo generates su
 
 It is natural to accompany the summary with links to the original content, and a common design pattern is to see this link in the form of a "Read More ..." button. See the `.RelPermalink`, `.Permalink`, and `.Truncated` [page variables][pagevariables].
 
-### Automatic Summary Splitting
+### Автоматическое формирование краткого содержания страниц
 
 By default, Hugo automatically takes the first 70 words of your content as its summary and stores it into the `.Summary` page variable for use in your templates. You may customize the summary length by setting `summaryLength` in your [site configuration](/getting-started/configuration/).
 

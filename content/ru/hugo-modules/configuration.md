@@ -79,7 +79,7 @@ max
 extended
 : Whether the extended version of Hugo is required.
 
-## Module Config: imports
+## Конфигурация модулей: imports
 
 {{< code-toggle file="config">}}
 [module]
@@ -112,7 +112,7 @@ noVendor
 
 {{< gomodules-info >}}
 
-## Module Config: mounts
+## Конфигурация модуля: mounts
 
 {{% note %}}
 When the `mounts` config was introduced in Hugo 0.56.0, we were careful to preserve the existing `contentDir`, `staticDir`, and similar configuration to make sure all existing sites just continued to work. But you should not have both: if you add a `mounts` section you should remove the old `contentDir`, `staticDir`, etc. settings.

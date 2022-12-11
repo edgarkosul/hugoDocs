@@ -13,7 +13,7 @@ weight: 180
 aliases: [/extras/permalinks/,/extras/aliases/,/extras/urls/,/doc/redirects/,/doc/alias/,/doc/aliases/]
 ---
 
-## Permalinks
+## Постоянные ссылки
 
 The default Hugo target directory for your built website is `public/`. However, you can change this value by specifying a different `publishDir` in your [site configuration][config]. The directories created at build time for a section reflect the position of the content's directory within the `content` folder and namespace matching its layout within the `contentdir` hierarchy.
 
@@ -295,7 +295,7 @@ url: "custom/foo"
 ---
 ```
 
-## Relative URLs
+## Относительные URL-адреса
 
 By default, all relative URLs are left unchanged by Hugo, which can be problematic when you want to make your site browsable from a local file system.
 

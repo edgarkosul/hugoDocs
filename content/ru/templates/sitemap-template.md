@@ -26,7 +26,7 @@ With a multilingual project, Hugo generates:
 - A sitemap.xml file in the root of each site (language) using the built-in [sitemap.xml] template
 - A sitemap.xml file in the root of the [`publishDir`] using the built-in [sitemapindex.xml] template
 
-## Configuration
+## Конфигурация
 
 Set the default values for [change frequency] and [priority], and the name of the generated file, in your site configuration.
 

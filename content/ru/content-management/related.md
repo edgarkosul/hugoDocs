@@ -65,9 +65,9 @@ In order to build those set and pass them as argument, one must use the `keyVals
 Read [this blog article](https://regisphilibert.com/blog/2018/04/hugo-optmized-relashionships-with-related-content/) for a great explanation of more advanced usage of this feature.
 {{% /note %}}
 
-## Configure Related Content
+## Конфигурация списков связанного контента
 
-Hugo provides a sensible default configuration of Related Content, but you can fine-tune this in your configuration, on the global or language level if needed.
+Hugo предоставляет разумную конфигурацию генерации списков связанного контента по умолчанию, но при необходимости вы можете настроить ее в своей конфигурации на глобальном или языковом уровне.
 
 ### Default configuration
 

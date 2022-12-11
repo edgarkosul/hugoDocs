@@ -1,7 +1,7 @@
 ---
-title: Quick Start
-linktitle: Quick Start
-description: Create a Hugo site using the beautiful Ananke theme.
+title: Быстрый старт
+linktitle: Быстрый старт
+description: Создание сайта на Hugo, используя красивую тему Ananke.
 date: 2013-07-01
 publishdate: 2013-07-01
 categories: [getting started]
@@ -19,53 +19,53 @@ toc: true
 ---
 
 {{% note %}}
-This quick start uses `macOS` in the examples. For instructions about how to install Hugo on other operating systems, see [install](/installation/).
+В этом кратком руководстве в примерах используется `macOS`. Инструкции по установке Hugo в других операционных системах см. в разделе [install](/ru/installation/).
 
-It is required to have [Git installed](https://git-scm.com/downloads) to run this tutorial.
+Для  использования этого руководства необходимо [установить Git](https://git-scm.com/downloads).
 
-For other approaches to learning Hugo (like books or video tutorials), refer to the [external learning resources](/getting-started/external-learning-resources/) page.
+Другие подходы к изучению Hugo (например, книги или видеоуроки) см. на странице [внешних учебных ресурсов](/getting-started/external-learning-resources/).
 {{% /note %}}
 
-## Step 1: Install Hugo
+## Шаг 1: Установка Hugo
 
-Install the **extended version of Hugo** (this is required for the current theme used).
+Установите **расширенную версию Hugo** (требуется для  используемой в этом руководстве темы).
 
 {{% note %}}
-`Homebrew` and `MacPorts`, package managers for `macOS`,  can be installed from [brew.sh](https://brew.sh/) or [macports.org](https://www.macports.org/) respectively. See [install](/installation/) if you are running Windows etc.
+`Homebrew` и `MacPorts`, менеджеры пакетов для `macOS`, можно установить с [brew.sh](https://brew.sh/) или [macports.org](https://www.macports.org). /) соответственно. См. [установка Hugo](/ru/installation/), если вы используете Windows или Lunux.
 {{% /note %}}
 
 ```bash
 brew install hugo
-# or
+# или
 port install hugo
 ```
 
-To verify your new install:
+Чтобы проверить корректность установки:
 
 ```bash
 hugo version
 # Example output: hugo v0.104.2+extended darwin/amd64 BuildDate=unknown
 ```
 
-It should state that it is `extended`. If it does not, uninstall it and try another installation method.
+Должно быть указано, что это `extended` версия. Если это не так, преустаноите  Hugo или попробуйте другой метод установки.
 
 {{< asciicast ItACREbFgvJ0HjnSNeTknxWy9 >}}
 
-## Step 2: Create a New Site
+## Шаг 2: Создание нового сайта
 
 ```bash
 hugo new site quickstart
 ```
 
-The above will create a new Hugo site in a folder named `quickstart`.
+Будет создан новый сайт Hugo в директории `quickstart`.
 
 {{< asciicast 3mf1JGaN0AX0Z7j5kLGl3hSh8 >}}
 
-## Step 3: Add a Theme
+## Шаг 3: Добавление темы
 
-See [themes.gohugo.io](https://themes.gohugo.io/) for a list of themes to consider. This quickstart uses the beautiful [Ananke theme](https://themes.gohugo.io/gohugo-theme-ananke/).
+С  доступными к установке на Hugo темами можно ознакомиться на сайте [themes.gohugo.io](https://themes.gohugo.io/). В этом кратком руководстве используется красивая [тема Ananke](https://themes.gohugo.io/gohugo-theme-ananke/).
 
-First, download the theme from GitHub and add it to your site's `themes` directory:
+Сначала загрузите тему с GitHub и добавьте ее в каталог `themes` вашего сайта:
 
 ```bash
 cd quickstart
@@ -73,7 +73,7 @@ git init
 git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke
 ```
 
-Then, add the theme to the site configuration:
+Затем добавьте тему в конфигурацию сайта:
 
 ```bash
 echo theme = \"ananke\" >> config.toml
@@ -81,9 +81,9 @@ echo theme = \"ananke\" >> config.toml
 
 {{< asciicast 7naKerRYUGVPj8kiDmdh5k5h9 >}}
 
-## Step 4: Add Some Content
+## Шаг 4: Добавление контента
 
-You can manually create content files (for example as `content/<CATEGORY>/<FILE>.<FORMAT>`) and provide metadata in them, however you can use the `new` command to do a few things for you (like add title and date):
+Вы можете вручную создавать файлы с контентом (например, как `content/<CATEGORY>/<FILE>.<FORMAT>`) и создать  в них метаданные, однако вы можете использовать команду `new`, чтобы hugo сделал несколько вещей за вас (например, добавил название страницы (title) и дату):
 
 ```txt
 hugo new posts/my-first-post.md
@@ -91,7 +91,7 @@ hugo new posts/my-first-post.md
 
 {{< asciicast eUojYCfRTZvkEiqc52fUsJRBR >}}
 
-Edit the newly created content file if you want, it will start with something like this:
+Далее можно приступать к редактированию только что созданного файла. Автоматически созданные Hugo параметры в заголовке Front Matter  будут выглядеть примерно так:
 
 ```md
 ---
@@ -103,12 +103,14 @@ draft: true
 ```
 
 {{% note %}}
-Drafts do not get deployed; once you finish a post, update the header of the post to say `draft: false`. More info [here](/getting-started/usage/#draft-future-and-expired-content).
+Черновики не будут опубликованы, пока в заголовке Front Matter будет параметр `draft: true`.
+Для того чтобы страница была опубликавана при сборке необходимо изменить параметр на `draft: false`
+Дополнительная информация [здесь](/ru/getting-started/usage/#draft-future-and-expired-content).
 {{% /note %}}
 
-## Step 5: Start the Hugo server
+## Шаг 5: Запуск сервера Hugo
 
-Now, start the Hugo server with [drafts](/getting-started/usage/#draft-future-and-expired-content) enabled:
+Теперь запустите сервер Hugo с включенным параметром [`draft`](/ru/getting-started/usage/#draft-future-and-expired-content):
 
 {{< asciicast BvJBsF6egk9c163bMsObhuNXj >}}
 
@@ -136,17 +138,17 @@ Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
 Press Ctrl+C to stop
 ```
 
-**Navigate to your new site at [http://localhost:1313/](http://localhost:1313/).**
+**Перейдите на свой новый сайт по адресу[http://localhost:1313/](http://localhost:1313/).**
 
-Feel free to edit or add new content and you will see the changes in the browser right away while the Hugo server is running. (You might need to force refresh your web browser, something like Ctrl-R usually works.)
+Теперь можно редакитировать или добавлять новый контент, и вы сразу же видеть изменения в браузере во время работы сервера Hugo. (Возможно, вам придется принудительно обновить веб-браузер, обычно работает что-то вроде Ctrl-R.)
 
-## Step 6: Customize the Theme
+## Шаг 6: Настройка темы
 
-Your new site already looks great, but you will want to tweak it a little before you release it to the public.
+Ваш новый сайт уже выглядит не плохо, но вам нужно его немного отредактировать, прежде чем опубликовать.
 
-### Site Configuration
+### Конфигурация сайта
 
-Open up `config.toml` in a text editor:
+Откройте `config.toml` в текстовом редакторе:
 
 ```toml
 baseURL = "https://example.org/"
@@ -155,22 +157,22 @@ title = "My New Hugo Site"
 theme = "ananke"
 ```
 
-Replace the `title` above with something more personal. Also, if you already have a domain ready, set the `baseURL`. Note that this value is not needed when running the local development server.
+Замените название сайта в параметре 'title' на что-то более индивидуальное. Кроме того, если у вас уже есть свой домен, установите `baseURL`. Обратите внимание, что это значение не требуется при запуске локального сервера разработки.
 
 {{% note %}}
-**Tip:** Make the changes to the site configuration or any other file in your site while the Hugo server is running, and you will see the changes in the browser right away, though you may need to [clear your cache](https://kb.iu.edu/d/ahic).
+**Совет.**  Bам может потребоваться [очистить кеш браузера]( https://kb.iu.edu/d/ahic) перед изменениями конфигурации сайта или любого другого файл на своем сайте во время работы сервера Hugo, для корректного отображения вносимых изменений в реальном времени.
 {{% /note %}}
 
-For theme specific configuration options, see the [theme site](https://github.com/theNewDynamic/gohugo-theme-ananke).
+Параметры конфигурации для конкретной темы см. на [сайте темы](https://github.com/theNewDynamic/gohugo-theme-ananke).
 
-**For further theme customization, see [Customize a Theme](/themes/customizing/).**
+**Для дальнейшей настройки темы см. раздел документации [Настройка темы](/ru/themes/customizing/).**
 
-### Step 7: Build static pages
+### Шаг 7: Сборка статического сайта
 
-It is simple. Just call:
+Сборка запускается простой командой (ключ -D позволяет включить страницы контента, помеченные как черновик `draft: true`):
 
 ```txt
 hugo -D
 ```
 
-Output will be in `./public/` directory by default (`-d`/`--destination` flag to change it, or set `publishdir` in the config file).
+По умолчанию сайт будет собран в директории `./public/` (флаг `-d`/`--destination`, может изменить директорию). Также изменить директорию можно установив параметр `publishdir` в основном файле конфигурации).

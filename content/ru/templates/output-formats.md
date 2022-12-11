@@ -20,7 +20,7 @@ toc: true
 
 This page describes how to properly configure your site with the media types and output formats, as well as where to create your templates for your custom outputs.
 
-## Media Types
+## MIME-типы
 
 A [media type][] (also known as _MIME type_ and _content type_) is a two-part identifier for file formats and format contents transmitted on the internet.
 

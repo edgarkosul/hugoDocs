@@ -27,7 +27,7 @@ But when developing and building your site, the runtime is the `hugo` executable
 * User-defined components have read-only access to the filesystem.
 * We shell out to some external binaries to support [Asciidoctor](/content-management/formats/#list-of-content-formats) and similar, but those binaries and their flags are predefined and disabled by default (see [Security Policy](#security-policy)). General functions to run arbitrary external OS commands have been [discussed](https://github.com/gohugoio/hugo/issues/796), but not implemented because of security concerns.
 
-## Security Policy
+## Политика безопасности
 
 Hugo has a built-in security policy that restricts access to [os/exec](https://pkg.go.dev/os/exec), remote communication and similar.
 

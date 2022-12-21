@@ -1,8 +1,8 @@
 ---
 title: Windows
 linkTitle: Windows
-description: Install Hugo on Windows.
-categories: [installation]
+description: Установка Hugo на Windows.
+categories: [установка hugo]
 menu:
   docs:
     parent: installation
@@ -16,11 +16,11 @@ weight: 40
 
 {{% readfile file="/installation/common/03-prebuilt-binaries.md" %}}
 
-## Package managers
+## Менеджеры пакетов
 
 ### Chocolatey
 
-[Chocolatey] is a free and open source package manager for Windows. This will install the extended edition of Hugo:
+[Chocolatey] — это бесплатный менеджер пакетов с открытым исходным кодом для Windows. Эта команда установит расширенную версию Hugo:
 
 ```sh
 choco install hugo-extended
@@ -30,7 +30,7 @@ choco install hugo-extended
 
 ### Scoop
 
-[Scoop] is a free and open source package manager for Windows. This will install the extended edition of Hugo:
+[Scoop] — это бесплатный менеджер пакетов с открытым исходным кодом для Windows. Эта команда установит расширенную версию Hugo:
 
 ```sh
 scoop install hugo-extended
@@ -43,21 +43,21 @@ scoop install hugo-extended
 {{% readfile file="/installation/common/05-build-from-source.md" %}}
 
 {{% note %}}
-When building the extended edition of Hugo from source on Windows, you will also need to install the [GCC compiler]. See these [detailed instructions].
+При сборке расширенной версии Hugo из исходного кода в Windows вам также потребуется установить [GCC compiler]. См. эти [подробные инструкции].
 
-[detailed instructions]: https://discourse.gohugo.io/t/41370
+[подробные инструкции]: https://discourse.gohugo.io/t/41370
 [GCC compiler]: https://gcc.gnu.org/
 {{% /note %}}
 
-## Comparison
+## Сравнение
 
-||Prebuilt binaries|Package managers|Docker|Build from source
+||Установочные файлы|Менеджеры пакетов|Docker|Сборка из исходников
 :--|:--:|:--:|:--:|:--:|:--:
-Easy to install?|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|
-Easy to upgrade?|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:
-Easy to downgrade?|:heavy_check_mark:|:heavy_check_mark: [^2]|:heavy_check_mark:|:heavy_check_mark:
-Automatic updates?|:x:|:x: [^1]|:x: [^1]|:x:
-Latest version available?|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:
+Простота установки|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|
+Простота обновления|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:
+Простота понижения версии|:heavy_check_mark:|:heavy_check_mark: [^2]|:heavy_check_mark:|:heavy_check_mark:
+Автоматические обновления|:x:|:x: [^1]|:x: [^1]|:x:
+Доступность последней версии|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:
 
-[^1]: Possible but requires advanced configuration.
-[^2]: Easy if a previous version is still installed.
+[^1]: Возможно, но требует дополнительной настройки.
+[^2]: Легко, если установлена ​​предыдущая версия.

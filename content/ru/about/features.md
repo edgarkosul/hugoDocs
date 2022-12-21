@@ -1,7 +1,7 @@
 ---
-title: Hugo Features
-linktitle: Hugo Features
-description: Hugo boasts blistering speed, robust content management, and a powerful templating language making it a great fit for all kinds of static websites.
+title: Возможности Hugo
+linktitle: Возможности Hugo
+description: Hugo может похвастаться невероятной скоростью, надежным управлением контентом и мощным языком шаблонов, что делает его идеальным для всех видов статических веб-сайтов.
 date: 2017-02-01
 publishdate: 2017-02-01
 lastmod: 2017-02-01
@@ -15,70 +15,70 @@ draft: false
 toc: true
 ---
 
-## General
+## Основные особенности
 
-* [Extremely fast][] build times (&lt; 1 ms per page)
-* Completely cross platform, with [easy installation][install] on macOS, Linux, Windows, and more
-* Renders changes on the fly with [LiveReload][] as you develop
-* [Powerful theming][]
-* [Host your site anywhere][hostanywhere]
+* [Чрезвычайно быстрая][] сборка (&lt; 1 ms на страницу)
+* Полностью кроссплатформенный, с [простой установкой][install] на macOS, Linux, Windows и другие платформы.
+* Визуализирует изменения на лету с помощью [LiveReload][] во время разработки.
+* [Мощная шаблонизация][]
+* [Возможность разместить сайт практически где угодно][hostanywhere]
 
-## Organization
+## Организация проекта
 
-* Straightforward [organization for your projects][], including website sections
-* Customizable [URLs][]
-* Support for configurable [taxonomies][], including categories and tags
-* [Sort content][] as you desire through powerful template [functions][]
-* Automatic [table of contents][] generation
-* [Dynamic menu][] creation
-* [Pretty URLs][] support
-* [Permalink][] pattern support
-* Redirects via [aliases][]
+* Простая [организация проекта][], включая его разделы.
+* Кастомизация [URL][]
+* Поддержка конфигурируемых [таксономий][], включающих категории и теги
+* [Сортировка контента][] по своему усмотрению с использованием мощных [функций][] шаблонов
+* Автоматическая генерация [оглавления][]
+* [Динамическое создание][] меню
+* Поддержка [человеко-понятных URL][]
+* Поддержка шаблонов [Permalink][]
+* Поддержка редиректов через [алиасы][]
 
-## Content
+## Содержание
 
-* Native Markdown and Emacs Org-Mode support, as well as other languages via *external helpers* (see [supported formats][])
-* TOML, YAML, and JSON metadata support in [front matter][]
-* Customizable [homepage][]
-* Multiple [content types][]
-* Automatic and user defined [content summaries][]
-* [Shortcodes][] to enable rich content inside of Markdown
-* ["Minutes to Read"][pagevars] functionality
-* ["WordCount"][pagevars] functionality
+* Встроенная поддержка Markdown и Emacs Org-Mode, а также других языков через *внешние помощники* (см. [поддерживаемые форматы][])
+* Поддержка TOML, YAML, и JSON метаданных в парметрах в заголовках [Front Matter][]
+* Полностью настраиваемая [домашняя страница сайта][]
+* Множество [типов контента][]
+* Автоматически и определяемые пользователем [краткие сведения о содержании][]
+* Поддержка [Шорткодов][] чтобы включить расширенный контент в файлы с контентом на языке Markdown 
+* Поддержка функционала генерации ["Времени чтения"][pagevars] страницы
+* Поддержка функционала генерации ["Количества слов"][pagevars] на странице
 
-## Additional Features
+## Дополнительные возможности
 
-* Integrated [Disqus][] comment support
-* Integrated [Google Analytics][] support
-* Automatic [RSS][] creation
-* Support for [Go][] HTML templates
-* [Syntax highlighting][] powered by [Chroma][]
+* Интегрированная поддержка сервиса комментариев [Disqus][] 
+* Интегрированная поддержка [Google Analytics][]
+* Автоматическая генерация [RSS][] ленты
+* Поддержка [Go][] HTML шалонов
+* [Подсветка синитаксиса][] с использованием [Chroma][]
 
-[aliases]: /content-management/urls/#aliases
+[алиасы]: /ru/content-management/urls/#aliases
 [Chroma]: https://github.com/alecthomas/chroma
-[content summaries]: /content-management/summaries/
-[content types]: /content-management/types/
+[краткие сведения о содержании]: /ru/content-management/summaries/
+[типов контента]: /ru/content-management/types/
 [Disqus]: https://disqus.com/
-[Dynamic menu]: /templates/menu-templates/
-[Extremely fast]: https://github.com/bep/hugo-benchmark
-[front matter]: /content-management/front-matter/
-[functions]: /functions/
+[Динамическое создание]: /ru/templates/menu-templates/
+[Чрезвычайно быстрая]: https://github.com/bep/hugo-benchmark
+[Front Matter]: /ru/content-management/front-matter/
+[функций]: /ru/functions/
 [Go]: https://pkg.go.dev/html/template
 [Google Analytics]: https://google-analytics.com/
-[homepage]: /templates/homepage/
-[hostanywhere]: /hosting-and-deployment/
-[install]: /installation/
-[LiveReload]: /getting-started/usage/
-[organization for your projects]: /getting-started/directory-structure/
-[pagevars]: /variables/page/
-[Permalink]: /content-management/urls/#permalinks
-[Powerful theming]: /hugo-modules/theme-components/
-[Pretty URLs]: /content-management/urls/
-[RSS]: /templates/rss/
-[Shortcodes]: /content-management/shortcodes/
-[sort content]: /templates/
-[supported formats]: /content-management/formats/
-[Syntax highlighting]: /content-management/syntax-highlighting/
-[table of contents]: /content-management/toc/
-[taxonomies]: /content-management/taxonomies/
-[URLs]: /content-management/urls/
+[домашняя страница сайта]: /ru/templates/homepage/
+[hostanywhere]: /ru/hosting-and-deployment/
+[install]: /ru/installation/
+[LiveReload]: /ru/getting-started/usage/
+[организация проекта]: /ru/getting-started/directory-structure/
+[pagevars]: /ru/variables/page/
+[Permalink]: /ru/content-management/urls/#permalinks
+[Мощная шаблонизация]: /ru/hugo-modules/theme-components/
+[человеко-понятных URL]: /ru/content-management/urls/#pretty-urls
+[RSS]: /ru/templates/rss/
+[Шорткодов]: /ru/content-management/shortcodes/
+[Сортировка контента]: /ru/templates/
+[поддерживаемые форматы]: /ru/content-management/formats/
+[Подсветка синитаксиса]: /ru/content-management/syntax-highlighting/
+[оглавления]: /ru/content-management/toc/
+[таксономий]:/ru/content-management/taxonomies/
+[URL]: /ru/content-management/urls/

@@ -1,21 +1,21 @@
-## Prerequisites
+## Зависимости
 
-Although not required in all cases, Git and Go are often used when working with Hugo.
+Git и Go часто используются при работе с Hugo, хотя это и не требуется во всех случаях.
 
-Git is required to:
+Git необходим для:
 
-- Use the [Hugo Modules] feature
-- Build Hugo from source
-- Install a theme as a Git submodule
-- Access [commit information] from a local Git repository
-- Host your site with services such as [AWS Amplify], [CloudCannon], [Cloudflare Pages], [GitHub Pages], [GitLab Pages], and [Netlify].
+- Использования [Модулей Hugo][]
+- Сборке Hugo из исходников
+- Установке тем как подмодулей Git
+- Доступа к [информации о коммите] из локального репозитория Git.
+- Размещении сайта с помощью таких сервисов, как [AWS Amplify], [CloudCannon], [Cloudflare Pages], [GitHub Pages], [GitLab Pages], и [Netlify].
 
-Go is required to:
+Go требуется для:
 
-- Use the Hugo Modules feature
-- Build Hugo from source
+- Использования [Модулей Hugo][]
+- Сборке Hugo из исходников
 
-Please refer to the [Git] and [Go] documentation for installation instructions.
+Инструкции по установке см. в документации [Git] и [Go].
 
 [AWS Amplify]: https://aws.amazon.com/amplify/
 [CloudCannon]: https://cloudcannon.com/

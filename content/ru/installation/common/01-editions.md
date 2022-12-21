@@ -1,8 +1,8 @@
-## Editions
+## Версии
 
-Hugo is available in two editions: standard and extended. With the extended edition you can:
+Hugo доступен в двух версиях: стандартной и расширенной. С расширенной версией вы можете:
 
-- Encode WebP images (you can decode WebP images with both editions)
-- Transpile Sass to CSS using the embedded LibSass transpiler
+- Кодировать изображения WebP (вы можете декодировать изображения WebP в обеих версиях)
+- Транспилировать Sass в CSS с помощью встроенного транспилятора LibSass.
 
-We recommend that you install the extended edition.
+Мы рекомендуем вам установить расширенную версию.

@@ -15,8 +15,8 @@ aliases: [/overview/introduction/]
 toc: false
 ---
 
-If this is your first time using Hugo and you've [already installed Hugo on your machine][installed], we recommend the [quick start][]. You can also use [external learning resources][] to learn Hugo.
+Если вы впервые используете Hugo и вы [уже установили Hugo на свой компьютер][installed], мы рекомендуем начать со раздела документации - [быстрый старт][]. Вы также можете использовать [внешние учебные ресурсы][] на английском языке, чтобы изучить Hugo.
 
-[installed]: /installation/
-[quick start]: /getting-started/quick-start/
-[external learning resources]: /getting-started/external-learning-resources/
+[installed]: /ru/installation/
+[быстрый старт]: /ru/getting-started/quick-start/
+[внешние учебные ресурсы]: /ru/getting-started/external-learning-resources/

@@ -1,7 +1,7 @@
 ---
-title: What is Hugo
-linktitle: What is Hugo
-description: Hugo is a fast and modern static site generator written in Go, and designed to make website creation fun again.
+title: Что такое HUGO
+linktitle: Что такое HUGO
+description: Hugo — это быстрый и современный генератор статических сайтов, написанный на Go и разработанный, чтобы сделать создание веб-сайтов быстрым и  увлекательным.
 date: 2017-02-01
 publishdate: 2017-02-01
 lastmod: 2017-02-01
@@ -17,27 +17,27 @@ aliases: [/overview/introduction/,/about/why-i-built-hugo/]
 toc: true
 ---
 
-Hugo is a general-purpose website framework. Technically speaking, Hugo is a [static site generator][]. Unlike systems that dynamically build a page with each visitor request, Hugo builds pages when you create or update your content. Since websites are viewed far more often than they are edited, Hugo is designed to provide an optimal viewing experience for your website's end users and an ideal writing experience for website authors.
+Hugo — это универсальный фреймворк для веб-сайтов. С технической точки зрения, Hugo — это [генератор статических сайтов][]. В отличие от систем, которые динамически создают страницу с каждым запросом посетителя, Hugo создает страницы, когда вы создаете или обновляете свой контент. Поскольку веб-сайты просматриваются гораздо чаще, чем редактируются, Hugo разработан для обеспечения оптимального соотношения удобства для конечных пользователей, авторов и контент менеджеров веб-сайтов.
 
-Websites built with Hugo are extremely fast and secure. Hugo sites can be hosted anywhere, including [Netlify][], [Heroku][], [GoDaddy][], [DreamHost][], [GitHub Pages][], [GitLab Pages][], [Surge][], [Firebase][], [Google Cloud Storage][], [Amazon S3][], [Rackspace][], [Azure][], and [CloudFront][] and work well with CDNs. Hugo sites run without the need for a database or dependencies on expensive runtimes like Ruby, Python, or PHP.
+Веб-сайты, созданные с помощью Hugo, чрезвычайно быстры и безопасны. Сайты Hugo можно размещать где угодно, в том числе [Netlify][], [Heroku][], [GoDaddy][], [DreamHost][], [GitHub Pages][], [GitLab Pages][], [Surge][], [Firebase][], [Google Cloud Storage][], [Amazon S3][], [Rackspace][], [Azure][], and [CloudFront][] и хорошо работает с сервисами [CDN][]. Сайты Hugo работают без базы данных или зависимости от тяжелых сред выполнения, таких как Ruby, Python или PHP.
 
-We think of Hugo as the ideal website creation tool with nearly instant build times, able to rebuild whenever a change is made.
+Пожалуй Hugo является идеальным инструментом для создания веб-сайтов с почти мгновенной сборкой, способной пресобираться сразу после внесения изменений.
 
-## How Fast is Hugo?
+## Насколько быстр HUGO?
 
 {{< youtube "CdiDYZ51a2o" >}}
 
-## What Does Hugo Do?
+## Как работает HUGO?
 
-In technical terms, Hugo takes a source directory of files and templates and uses these as input to create a complete website.
+С технической точки зрения, Hugo берет исходный каталог файлов и шаблонов и использует их в качестве исходных данных для создания полноценного веб-сайта.
 
-## Who Should Use Hugo?
+## Кому следует использовать HUGO?
 
-Hugo is for people that prefer writing in a text editor over a browser.
+Hugo предназначен для людей, которые предпочитают писать в текстовом редакторе, а не в браузере.
 
-Hugo is for people who want to hand code their own website without worrying about setting up complicated runtimes, dependencies and databases.
+Hugo предназначен для людей, которые хотят вручную кодировать свой собственный веб-сайт, не беспокоясь о настройке сложных сред выполнения, зависимостей и баз данных.
 
-Hugo is for people building a blog, a company site, a portfolio site, documentation, a single landing page, or a website with thousands of pages.
+Hugo предназначен для тех, кто создает блог, сайт компании, портфолио, документацию, одну целевую страницу или веб-сайт с тысячами страниц.
 
 [@spf13]: https://twitter.com/spf13
 [Amazon S3]: https://aws.amazon.com/s3/
@@ -59,4 +59,5 @@ Hugo is for people building a blog, a company site, a portfolio site, documentat
 [Surge]: https://surge.sh
 [contributing to it]: https://github.com/gohugoio/hugo
 [rackspace]: https://www.rackspace.com/openstack/public/files
-[static site generator]: /about/benefits/
+[генератор статических сайтов]: /ru/about/benefits/
+[CDN]: https://ru.wikipedia.org/wiki/Content_Delivery_Network

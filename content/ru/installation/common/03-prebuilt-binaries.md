@@ -1,21 +1,20 @@
-## Prebuilt binaries
+## Установочные файлы
 
-Prebuilt binaries are available for a variety of operating systems and architectures. Visit the [latest release] page, and scroll down to the Assets section.
+Готовые двоичные установочные файлы доступны для различных операционных систем и архитектур. Посетите страницу [с последними релизами] и прокрутите вниз до раздела __Assets__.
 
-<!-- markdownlint-disable-next-line MD051 -->
-1. Download the archive for the desired [edition], operating system, and architecture
-1. Extract the archive
-1. Move the executable to the desired directory
-1. Add this directory to the PATH environment variable
-1. Verify that you have _execute_ permission on the file
+1. Скачивайте архив под нужную версию, операционную систему и архитектуру
+1. Распакуйте архив
+1. Переместите исполняемый файл в нужный каталог
+1. Добавьте этот каталог в переменную окружения PATH.
+1. Убедитесь, что у вас есть права на запуск на файла.
 
-Please consult your operating system documentation if you need help setting file permissions or modifying your PATH environment variable.
+Обратитесь к документации по операционной системе, если вам нужна помощь в настройке прав доступа к файлам или изменении переменной среды PATH.
 
-If you do not see a prebuilt binary for the desired edition, operating system, and architecture, install Hugo using one of the methods described below.
+Если вы не видите готовый установочный двоичный файл для нужного выпуска, операционной системы и архитектуры, установите Hugo одним из способов, описанных ниже.
 
-[commit information]: https://gohugo.io/variables/git
+[информации о коммите]: https://gohugo.io/variables/git
 [edition]: #editions
 [Git]: https://git-scm.com/
 [Go]: https://go.dev/
-[Hugo Modules]: /hugo-modules/
-[latest release]: https://github.com/gohugoio/hugo/releases/latest
+[Модулей Hugo]: /ru/hugo-modules/
+[с последними релизами]: https://github.com/gohugoio/hugo/releases/latest

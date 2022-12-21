@@ -1,10 +1,10 @@
 ## Docker
 
-[Erlend Klakegg Bergheim] graciously maintains [Docker images] based on images for Alpine Linux, Busybox, Debian, and Ubuntu.
+[Эрленд Клакегг Бергхейм] любезно поддерживает [образы Docker] на основе образов для Alpine Linux, Busybox, Debian и Ubuntu.
 
 ```sh
 docker pull klakegg/hugo
 ```
 
-[Docker images]: https://hub.docker.com/r/klakegg/hugo
-[Erlend Klakegg Bergheim]: https://github.com/klakegg
+[образы Docker]: https://hub.docker.com/r/klakegg/hugo
+[Эрленд Клакегг Бергхейм]: https://github.com/klakegg

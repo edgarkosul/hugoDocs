@@ -1,7 +1,7 @@
 ---
-title: Hugo and the  General Data Protection Regulation (GDPR)
-linktitle: Hugo and GDPR
-description: About how to configure your Hugo site to meet the new regulations.
+title: Hugo и Общий регламент по защите данных (GDPR)
+linktitle: Hugo и GDPR
+description: О том, как настроить свой сайт Hugo в соответствии с новыми правилами.
 date: 2018-05-25
 layout: single
 keywords: ["GDPR", "Privacy", "Data Protection"]

@@ -1,8 +1,8 @@
 ---
 title: macOS
 linkTitle: macOS
-description: Install Hugo on macOS.
-categories: [installation]
+description: Установка Hugo на macOS.
+categories: [установка hugo]
 menu:
   docs:
     parent: installation
@@ -16,13 +16,13 @@ weight: 20
 
 {{% readfile file="/installation/common/03-prebuilt-binaries.md" %}}
 
-## Package managers
+## Менеджеры пакетов
 
 {{% readfile file="/installation/common/homebrew.md" %}}
 
 ### MacPorts
 
-[MacPorts] is a free and open source package manager for macOS. This will install the extended edition of Hugo:
+[MacPorts] — это бесплатный менеджер пакетов с открытым исходным кодом для macOS. Эта команда установит расширенную версию Hugo:
 
 ```sh
 sudo port install hugo
@@ -34,15 +34,15 @@ sudo port install hugo
 
 {{% readfile file="/installation/common/05-build-from-source.md" %}}
 
-## Comparison
+## Сравнение
 
-||Prebuilt binaries|Package managers|Docker|Build from source
+||Установочные файлы|Менеджеры пакетов|Docker|Сборка из исходников
 :--|:--:|:--:|:--:|:--:|:--:
-Easy to install?|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|
-Easy to upgrade?|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:
-Easy to downgrade?|:heavy_check_mark:|:heavy_check_mark: [^1]|:heavy_check_mark:|:heavy_check_mark:
-Automatic updates?|:x:|:x: [^2]|:x: [^2]|:x:
-Latest version available?|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:
+Легко установить?|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|
+Легко обновить?|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:
+Легко понизить версию?|:heavy_check_mark:|:heavy_check_mark: [^1]|:heavy_check_mark:|:heavy_check_mark:
+Автоматические обновления?|:x:|:x: [^2]|:x: [^2]|:x:
+Доступна последняя версия?|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:
 
-[^1]: Easy if a previous version is still installed.
-[^2]: Possible but requires advanced configuration.
+[^1]: Легко, если предыдущая версия все еще установлена.
+[^2]: Возможно, но требует дополнительной настройки.

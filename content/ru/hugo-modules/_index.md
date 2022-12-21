@@ -1,7 +1,7 @@
 ---
-title: Hugo Modules
-linktitle: Hugo Modules Overview
-description: How to use Hugo Modules.
+title: Модули Hugo
+linktitle: Обзор модулей Hugo
+description: Как использовать модули Hugo.
 date: 2017-02-01
 publishdate: 2017-02-01
 menu:
@@ -17,16 +17,16 @@ aliases: [/themes/overview/,/themes/]
 toc: true
 ---
 
-**Hugo Modules** are the core building blocks in Hugo. A _module_ can be your main project or a smaller module providing one or more of the 7 component types defined in Hugo: **static**, **content**, **layouts**, **data**, **assets**, **i18n**, and **archetypes**.
+**Модули Hugo** — это основные строительные блоки в Hugo. _Модуль_ может быть вашим основным проектом или меньшим модулем, предоставляющим один или несколько из 7 типов компонентов, определенных в Hugo: **static**, **content**, **layouts**, **data**, **assets**, **i18n** и **archetypes**.
 
-You can combine modules in any combination you like, and even mount directories from non-Hugo projects, forming a big, virtual union file system.
+Вы можете комбинировать модули в любой комбинации и даже монтировать каталоги из проектов, отличных от Hugo, образуя большую виртуальную объединенную файловую систему.
 
-Hugo Modules are powered by Go Modules. For more information about Go Modules, see:
+Модули Hugo наследуют свой функционал от модулей Go. Для получения дополнительной информации о модулях Go см.:
 
 - [https://github.com/golang/go/wiki/Modules](https://github.com/golang/go/wiki/Modules)
 - [https://go.dev/blog/using-go-modules](https://go.dev/blog/using-go-modules)
 
-This is all very much brand new and there are only a few example projects around:
+Существует всего несколько примеров проектов, для демонстрации этого относительно нового функционала Hugo:
 
-- [https://github.com/bep/docuapi](https://github.com/bep/docuapi) is a theme that has been ported to Hugo Modules while testing this feature. It is a good example of a non-Hugo-project mounted into Hugo’s folder structure. It even shows a JS Bundler implementation in regular Go templates.
-- [https://github.com/bep/my-modular-site](https://github.com/bep/my-modular-site) is a very simple site used for testing.
+- [https://github.com/bep/docuapi](https://github.com/bep/docuapi) — это шаблон, который был реализован по новой с использованием Hugo Modules во время тестирования этой функции. Это хороший пример показывающий как не относящийся к Hugo проект, был смонтирован в структуру папок Hugo. Он даже показывает реализацию JS Bundler в обычных шаблонах Go.
+- [https://github.com/bep/my-modular-site](https://github.com/bep/my-modular-site) это очень простой сайт, используемый для тестирования.

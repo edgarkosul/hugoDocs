@@ -1,7 +1,7 @@
 ---
-title: The Benefits of Static Site Generators
-linktitle: The Benefits of Static
-description: Improved performance, security and ease of use are just a few of the reasons static site generators are so appealing.
+title: Преимущества генераторов статических сайтов
+linktitle: Преимущества статики
+description: Улучшенная производительность, безопасность и простота использования — вот лишь некоторые из причин, по которым генераторы статических сайтов так привлекательны.
 date: 2017-02-01
 publishdate: 2017-02-01
 lastmod: 2017-02-01
@@ -17,15 +17,15 @@ aliases: []
 toc: false
 ---
 
-The purpose of website generators is to render content into HTML files. Most are "dynamic site generators." That means the HTTP server---i.e., the program that sends files to the browser to be viewed---runs the generator to create a new HTML file every time an end user requests a page.
+Цель генераторов веб-сайтов — преобразовать контент в HTML-файлы. Большинство из них являются «генераторами динамических сайтов». Это означает, что HTTP-сервер, то есть программа, которая отправляет файлы в браузер для просмотра, запускает генератор для создания нового HTML-файла каждый раз, когда конечный пользователь запрашивает страницу.
 
-Over time, dynamic site generators were programmed to cache their HTML files to prevent unnecessary delays in delivering pages to end users. A cached page is a static version of a web page.
+Со временем генераторы динамических сайтов были запрограммированы на кэширование своих HTML-файлов, чтобы предотвратить ненужные задержки в доставке страниц конечным пользователям. Кэшированная страница — это статическая версия веб-страницы.
 
-Hugo takes caching a step further and all HTML files are rendered on your computer. You can review the files locally before copying them to the computer hosting the HTTP server. Since the HTML files aren't generated dynamically, we say that Hugo is a *static site generator*.
+Hugo делает шаг вперед в кэшировании, и все HTML-файлы пред загрузкой на HTTP-сервер генерируются  на локальном компьютере. Можно просмотреть файлы локально, прежде чем копировать их на HTTP-сервер. Поскольку файлы HTML не генерируются динамически, мы говорим, что Hugo является *генератором статических сайтов*.
 
-This has many benefits. The most noticeable is performance. HTTP servers are *very* good at sending files---so good, in fact, that you can effectively serve the same number of pages with a fraction of the memory and CPU needed for a dynamic site.
+Это имеет много преимуществ. Наиболее заметным является производительность. HTTP-серверы *очень* быстры при отдаче браузеру статических html файлов — настолько быстры, что вы можете эффективно размещать сайт на сервере с небольшой долей памяти и ЦП, которое необходимы были бы для аналогичного динамически генерируемого сайта. 
 
-## More on Static Site Generators
+## Подробнее о генераторах статических сайтов
 
 * ["An Introduction to Static Site Generators", David Walsh][]
 * ["Hugo vs. WordPress page load speed comparison: Hugo leaves WordPress in its dust", GettingThingsTech][hugovwordpress]

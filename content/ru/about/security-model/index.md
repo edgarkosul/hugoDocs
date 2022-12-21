@@ -1,6 +1,6 @@
 ---
-title: Hugo's Security Model
-description: A summary of Hugo's security model.
+title: Модель безопасности Хьюго
+description: Краткое изложение модели безопасности HUGO.
 date: 2019-10-01
 layout: single
 keywords: ["Security", "Privacy"]
@@ -14,52 +14,49 @@ aliases: [/security/]
 toc: true
 ---
 
-## Runtime Security
+## Безопасность среды выполнения
 
-Hugo produces static output, so once built, the runtime is the browser (assuming the output is HTML) and any server (API) that you integrate with.
+Результатом работы Hugo является статический вывод, поэтому после сборки средой выполнения является браузер (при условии, что вывод представляет собой HTML) и любой сервер (API), с которым вы интегрируетесь.
 
-But when developing and building your site, the runtime is the `hugo` executable. Securing a runtime can be [a real challenge](https://blog.logrocket.com/how-to-protect-your-node-js-applications-from-malicious-dependencies-5f2e60ea08f9/).
+Но во время разработки и сборки, средой выполнения является исполняемый файдл `hugo`. Безопасность среды выполнения может стать [настоящей проблемой](https://blog.logrocket.com/how-to-protect-your-node-js-applications-from-malicious-dependencies-5f2e60ea08f9/).
 
-**Hugo's main approach is that of sandboxing and a security policy with strict defaults:**
+**Основной подход HUGO — это выполнение процессов в изолированной среде, т.н. песочнице и политика безопасности со строгими значениями по умолчанию:**
 
-* Hugo has a virtual file system and only the main project (not third-party components) is allowed to mount directories or files outside the project root.
-* Only the main project can walk symbolic links.
-* User-defined components have read-only access to the filesystem.
-* We shell out to some external binaries to support [Asciidoctor](/content-management/formats/#list-of-content-formats) and similar, but those binaries and their flags are predefined and disabled by default (see [Security Policy](#security-policy)). General functions to run arbitrary external OS commands have been [discussed](https://github.com/gohugoio/hugo/issues/796), but not implemented because of security concerns.
+* Hugo имеет виртуальную файловую систему, и только основному проекту (не сторонним компонентам) разрешено монтировать директории или файлы вне корня проекта.
+* Только основной проект может преходить по символическим ссылкам.
+* Пользовательские компоненты имеют доступ к файловой системе только для чтения.
+* Hugo использует внешние бинарники для поддержки таких разметок как [Asciidoctor](/content-management/formats/#list-of-content-formats), но эти двоичные файлы и их флаги предопределены и отключены по умолчанию. (см. [Политика безопасности](#политика-безопасности)). Функции для запуска внешних команд OS [обсужлались](https://github.com/gohugoio/hugo/issues/796), но не реализованы из соображений безопасности.
 
 ## Политика безопасности
 
-Hugo has a built-in security policy that restricts access to [os/exec](https://pkg.go.dev/os/exec), remote communication and similar.
+Hugo имеет встроенную политику безопасности, которая ограничивает доступ к [os/exec](https://pkg.go.dev/os/exec), удаленному подключению и т.п.
 
-The default configuration is listed below. Any build using features not in the allow list of the security policy will fail with a detailed message about what needs to be done. Most of these settings are allow lists (string or slice, [Regular Expressions](https://pkg.go.dev/regexp) or `none` which matches nothing).
+Конфигурация по умолчанию приведена ниже. Любая сборка с использованием функций, не включенных в список разрешений политики безопасности, завершится ошибкой с подробным сообщением о том, что необходимо сделать. Большинство этих параметров представляют собой списки разрешений (строка или slice, [Регулярные выражения](https://pkg.go.dev/regexp) или `none`, что ничему не соответствует).
 
 {{< code-toggle config="security" />}}
 
-Note that these and other config settings in Hugo can be overridden by the OS environment. If you want to block all remote HTTP fetching of data:
+Обратите внимание, что эти и другие параметры конфигурации в Hugo могут быть переопределены переменными окружения ОС. Если вы хотите заблокировать все удаленные HTTP-выборки данных:
 
 ```txt
 HUGO_SECURITY_HTTP_URLS=none hugo
 ```
 
-## Dependency Security
+## Безопасность зависимостей
 
-Hugo is built as a static binary using [Go Modules](https://github.com/golang/go/wiki/Modules) to manage its dependencies. Go Modules have several safeguards, one of them being the `go.sum` file. This is a database of the expected cryptographic checksums of all of your dependencies, including transitive dependencies.
+Hugo построен как статический бинарник с использованием [модулей Go](https://github.com/golang/go/wiki/Modules) для управления его зависимостями. Модули Go имеют несколько средств защиты, одной из которых является файл `go.sum`. Это база данных ожидаемых криптографических контрольных сумм всех ваших зависимостей, включая транзитивные зависимости.
 
-[Hugo Modules](/hugo-modules/) is a feature built on top of the functionality of Go Modules. Like Go Modules, a Hugo project using Hugo Modules will have a `go.sum` file. We recommend that you commit this file to your version control system. The Hugo build will fail if there is a checksum mismatch, which would be an indication of [dependency tampering](https://julienrenaux.fr/2019/12/20/github-actions-security-risk/).
+[Модули HUGO](/hugo-modules/) — это функционал, построенный над функциональностью Go Modules. Как и модули Go, проект Hugo, использующий модули Hugo, будет иметь файл go.sum. Мы рекомендуем вам зафиксировать этот файл в вашей системе контроля версий (Имеется ввиду Git commit). Сборка Hugo завершится ошибкой, если будет несоответствие контрольной суммы, что может указывать на [подмену зависимостей](https://julienrenaux.fr/2019/12/20/github-actions-security-risk/).
 
-## Web Application Security
+## Безопасность веб-приложений
 
-These are the security threats as defined by [OWASP](https://en.wikipedia.org/wiki/OWASP).
+Это угрозы безопасности, определенные [OWASP](https://en.wikipedia.org/wiki/OWASP).
 
-For HTML output, this is the core security model:
+Для вывода HTML это основная модель безопасности:
 
 <https://pkg.go.dev/html/template#hdr-Security_Model>
 
-In short:
+Вкратце:
 
-Templates authors (you) are trusted, but the data you send in is not.
-This is why you sometimes need to use the _safe_ functions, such as `safeHTML`, to avoid escaping of data you know is safe.
-There is one exception to the above, as noted in the documentation: If you enable inline shortcodes, you also say that the shortcodes and data handling in content files are trusted, as those macros are treated as pure text.
-It may be worth adding that Hugo is a static site generator with no concept of dynamic user input.
+Авторам шаблонов (т.е. вам) доверяют, а данные, которые вы отправляете, — нет. Вот почему вам иногда нужно объявлять код безопасным с помощью функции [safeHTML](/ru/functions/safehtml/), чтобы избежать экранирования данных шаблонизатором Go, которое, делает содержимое безопасным. Как указано в документации, есть одно исключение из вышесказанного: если вы включаете встроенные шорткоды, вы также говорите, что шорткоды и обработка данных в файлах содержимого являются доверенными, поскольку эти макросы обрабатываются как чистый текст. Возможно, стоит добавить, что Hugo — это генератор статических сайтов без концепции динамического пользовательского ввода.
 
-For content, the default Markdown renderer is [configured](/getting-started/configuration-markup) to remove or escape potentially unsafe content. This behavior can be reconfigured if you trust your content.
+Средство визуализации Markdown по умолчанию [настроено](/ru/getting-started/configuration-markup) для удаления или исключения потенциально небезопасного контента. Это поведение можно изменить, если вы доверяете своему контенту.

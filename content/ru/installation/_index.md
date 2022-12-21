@@ -1,7 +1,7 @@
 ---
-title: Installation
-linkTitle: Installation overview
-description: Install Hugo on macOS, Linux, Windows, BSD, and on any machine that can run the Go compiler tool chain.
+title: Установка 
+linkTitle: Обзор установки Hugo
+description: Установите Hugo на macOS, Linux, Windows, BSD и на любую машину, на которой можно запустить цепочку инструментов компилятора Go.
 aliases: [/getting-started/installing/]
 categories: [installation]
 keywords: [installation]

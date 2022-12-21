@@ -1,8 +1,8 @@
 ---
 title: Linux
 linkTitle: Linux
-description: Install Hugo on Linux.
-categories: [installation]
+description: Установка Hugo на Linux.
+categories: [установка hugo]
 menu:
   docs:
     parent: installation
@@ -20,26 +20,26 @@ weight: 30
 
 ### Snap
 
-[Snap] is a free and open source package manager for Linux. Available for [most distributions], Snap packages are simple to install and are automatically updated. This will install the extended edition of Hugo:
+[Snap] — это бесплатный менеджер пакетов с открытым исходным кодом для Linux. Пакеты Snap, доступные для [большинства дистрибутивов], просты в установке и автоматически обновляются. Это установит расширенную версию Hugo:
 
 ```sh
 sudo snap install hugo
 ```
 
-[most distributions]: https://snapcraft.io/docs/installing-snapd
+[большинства дистрибутивов]: https://snapcraft.io/docs/installing-snapd
 [Snap]: https://snapcraft.io/
 
 {{% readfile file="/installation/common/homebrew.md" %}}
 
-## Repository packages
+## Пакеты репозитория
 
-Most Linux distributions maintain a repository for commonly installed applications. Please note that these repositories may not contain the [latest release].
+В большинстве дистрибутивов Linux имеется репозиторий часто устанавливаемых приложений. Обратите внимание, что эти репозитории могут не всегда могут содержать [последнюю версию Hugo].
 
-[latest release]: https://github.com/gohugoio/hugo/releases/latest
+[последнюю версию Hugo]: https://github.com/gohugoio/hugo/releases/latest
 
 ### Arch Linux
 
-Derivatives of the [Arch Linux] distribution of Linux include [EndeavourOS], [Garuda Linux], [Manjaro], and others. This will install the extended edition of Hugo:
+Дистрибутивы Linux основанные на [Arch Linux] включая [EndeavourOS], [Garuda Linux], [Manjaro] и другие. Эта команда установит расширенную версию Hugo:
 
 ```sh
 sudo pacman -S hugo
@@ -52,13 +52,15 @@ sudo pacman -S hugo
 
 ### Debian
 
-Derivatives of the [Debian] distribution of Linux include [elementary OS], [KDE neon], [Linux Lite], [Linux Mint], [MX Linux], [Pop!_OS], [Ubuntu], [Zorin OS], and others. This will install the extended edition of Hugo:
+Производные [Debian] дистрибутива Linux включая [elementary OS], [KDE neon], [Linux Lite], [Linux Mint], [MX Linux], [Pop!_OS], [Ubuntu], [Zorin OS], и другие. Эта команда установит расширенную версию Hugo:
 
 ```sh
 sudo apt install hugo
 ```
 
-You can also download Debian packages from the [latest release] page.
+Вы также можете загрузить пакеты Debian со страницы [с последними релизами Hugo].
+
+[с последними релизами Hugo]: https://github.com/gohugoio/hugo/releases/latest
 
 [Debian]: https://www.debian.org/
 [elementary OS]: https://elementary.io/
@@ -72,7 +74,7 @@ You can also download Debian packages from the [latest release] page.
 
 ### Fedora
 
-Derivatives of the [Fedora] distribution of Linux include [CentOS], [Red Hat Enterprise Linux], and others. This will install the extended edition of Hugo:
+Производные от [Red Hat Enterprise Linux] включаz [CentOS], [Fedora] и другие. Эта команда установит расширенную версию Hugo:
 
 
 ```sh
@@ -85,7 +87,7 @@ sudo dnf install hugo
 
 ### openSUSE
 
-Derivatives of the [openSUSE] distribution of Linux include [GeckoLinux], [Linux Karmada], and others. This will install the extended edition of Hugo:
+Производные от [openSUSE] Linux включая [GeckoLinux], [Linux Karmada] и другие. Эта команда установит расширенную версию Hugo:
 
 
 ```sh
@@ -98,7 +100,7 @@ sudo zypper install hugo
 
 ### Solus
 
-The [Solus] distribution of Linux includes Hugo in its package repository. This will install the _standard_ edition of Hugo:
+Дистрибутив [Solus] Linux включает Hugo в свой репозиторий пакетов. Это установит _стандартную_ версию Hugo:
 
 ```sh
 sudo eopkg install hugo
@@ -112,14 +114,14 @@ sudo eopkg install hugo
 
 ## Comparison
 
-||Prebuilt binaries|Package managers|Repository packages|Docker|Build from source
+||Установочные файлы|Менеджеры пакетов|Пакеты репозитория|Docker|Сборка из исходников
 :--|:--:|:--:|:--:|:--:|:--:
-Easy to install?|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:
-Easy to upgrade?|:heavy_check_mark:|:heavy_check_mark:|varies|:heavy_check_mark:|:heavy_check_mark:
-Easy to downgrade?|:heavy_check_mark:|:heavy_check_mark: [^1]|varies|:heavy_check_mark:|:heavy_check_mark:
-Automatic updates?|:x:|varies [^2]|:x:|:x: [^3]|:x:
-Latest version available?|:heavy_check_mark:|:heavy_check_mark:|varies|:heavy_check_mark:|:heavy_check_mark:
+Простота установки|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:
+Легкость обновления|:heavy_check_mark:|:heavy_check_mark:|разная|:heavy_check_mark:|:heavy_check_mark:
+Легкость понижения версии|:heavy_check_mark:|:heavy_check_mark: [^1]|разная|:heavy_check_mark:|:heavy_check_mark:
+Автоматическое обновление|:x:|разная [^2]|:x:|:x: [^3]|:x:
+Доступность послендней версии|:heavy_check_mark:|:heavy_check_mark:|разная|:heavy_check_mark:|:heavy_check_mark:
 
-[^1]: Easy if a previous version is still installed.
-[^2]: Snap packages are automatically updated. Homebrew requires advanced configuration.
-[^3]: Possible but requires advanced configuration.
+[^1]:Легко, если предыдущая версия все еще установлена.
+[^2]: Пакеты Snap автоматически обновляются. Homebrew требует дополнительной настройки.
+[^3]: Возможно, но требует дополнительной настройки.

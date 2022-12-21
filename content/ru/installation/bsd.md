@@ -1,8 +1,8 @@
 ---
 title: BSD
 linkTitle: BSD
-description: Install Hugo on BSD derivatives.
-categories: [installation]
+description: Установите Hugo на операционные системы основанные на BSD.
+categories: [установка hugo]
 menu:
   docs:
     parent: installation
@@ -16,15 +16,15 @@ weight: 50
 
 {{% readfile file="/installation/common/03-prebuilt-binaries.md" %}}
 
-## Repository packages
+## Пакеты репозитория
 
-Most BSD derivatives maintain a repository for commonly installed applications. Please note that these repositories may not contain the [latest release].
+Большинство основанных на BSD ОС  поддерживают репозиторий часто устанавливаемых приложений. Обратите внимание, что эти репозитории могут не содержать [последнюю версию Hugo].
 
-[latest release]: https://github.com/gohugoio/hugo/releases/latest
+[последнюю версию Hugo]: https://github.com/gohugoio/hugo/releases/latest
 
 ### DragonFly BSD
 
-[DragonFly BSD] includes Hugo in its package repository. This will install the extended edition of Hugo:
+[DragonFly BSD] включает Hugo в свой репозиторий пакетов. Эта команда установит расширенную версию Hugo:
 
 ```sh
 sudo pkg install gohugo
@@ -34,7 +34,7 @@ sudo pkg install gohugo
 
 ### FreeBSD
 
-[FreeBSD] includes Hugo in its package repository. This will install the extended edition of Hugo:
+[FreeBSD] включает Hugo в свой репозиторий пакетов. Эта команда установит расширенную версию Hugo:
 
 ```sh
 sudo pkg install gohugo
@@ -44,7 +44,7 @@ sudo pkg install gohugo
 
 ### NetBSD
 
-[NetBSD] includes Hugo in its package repository. This will install the extended edition of Hugo:
+[NetBSD] включает Hugo в свой репозиторий пакетов. Эта команда установит расширенную версию Hugo:
 
 ```sh
 sudo pkgin install go-hugo
@@ -54,7 +54,7 @@ sudo pkgin install go-hugo
 
 ### OpenBSD
 
-[OpenBSD] includes Hugo in its package repository. This will prompt you to select which edition of Hugo to install:
+[OpenBSD] включает Hugo в свой репозиторий пакетов. Вам будет предложено выбрать версию Hugo для дальнейшей установки:
 
 ```sh
 doas pkg_add hugo
@@ -66,14 +66,14 @@ doas pkg_add hugo
 
 {{% readfile file="/installation/common/05-build-from-source.md" %}}
 
-## Comparison
+## Сравнение
 
-||Prebuilt binaries|Repository packages|Docker|Build from source
+||Установочные файлы|Пакеты репозитория|Docker|Сборка из исходников
 :--|:--:|:--:|:--:|:--:
-Easy to install?|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|
-Easy to upgrade?|:heavy_check_mark:|varies|:heavy_check_mark:|:heavy_check_mark:
-Easy to downgrade?|:heavy_check_mark:|varies|:heavy_check_mark:|:heavy_check_mark:
-Automatic updates?|:x:|varies|:x: [^1]|:x:
-Latest version available?|:heavy_check_mark:|varies|:heavy_check_mark:|:heavy_check_mark:
+Простотота установки|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|
+Легкость обновления|:heavy_check_mark:|разная|:heavy_check_mark:|:heavy_check_mark:
+Легкость понижения версии|:heavy_check_mark:|разная|:heavy_check_mark:|:heavy_check_mark:
+Автоматическое обновление|:x:|разная|:x: [^1]|:x:
+Доступность последней версии|:heavy_check_mark:|разная|:heavy_check_mark:|:heavy_check_mark:
 
-[^1]: Possible but requires advanced configuration.
+[^1]: Возможно, но требует дополнительной настройки.
